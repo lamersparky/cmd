@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1119">
+  <title>Command Library Editor — Command Academy</title>
+  <style>
+    :root{color-scheme:dark;--bg:#09111a;--panel:#101d2b;--panel2:#17283a;--line:#2b4158;--text:#e6eef7;--muted:#9aadc3;--accent:#80c6ff;--good:#8ce5ad;--bad:#ff9e9e}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 10% 0%,#142d43,transparent 45%),var(--bg);color:var(--text);font:14px/1.55 system-ui,sans-serif}
+    main{max-width:1040px;margin:0 auto;padding:30px 18px 60px}.head{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:25px}.brand{font:800 16px ui-monospace,monospace;letter-spacing:.12em}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:5px}.chip{border:1px solid var(--line);border-radius:99px;color:var(--good);padding:6px 10px;font:10px ui-monospace,monospace}
+    h1{font-size:clamp(26px,4vw,38px);letter-spacing:-.04em;margin:0 0 8px}p{color:var(--muted)}.card{border:1px solid var(--line);border-radius:15px;background:rgba(16,29,43,.94);padding:20px;margin-top:16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{color:#c8d8e8;font-size:12px;font-weight:650}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px 11px;background:#091521;color:var(--text);font:13px ui-monospace,monospace}textarea{min-height:90px;resize:vertical}input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}.hint{color:var(--muted);font-size:11px}.buttons{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}button{border:1px solid var(--line);border-radius:8px;padding:10px 13px;background:var(--panel2);color:var(--text);font-weight:700;cursor:pointer}button.primary{background:#174a70;border-color:#397eae;color:#e8f5ff}button:hover{border-color:var(--accent)}.status{min-height:22px;margin-top:10px;color:var(--good);font-size:12px}.status.error{color:var(--bad)}pre{max-height:360px;overflow:auto;border:1px solid var(--line);border-radius:9px;background:#07111a;padding:14px;color:#cde4fa;font:11px/1.5 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}.steps{padding-left:20px;color:var(--muted)}.steps li{margin:7px 0}.steps code{color:var(--accent)}a{color:var(--accent)}@media(max-width:650px){.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.head{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="head"><div class="brand">COMMAND ACADEMY <small>LIBRARY MAINTENANCE // LOCAL EDITOR</small></div><span class="chip">NO BACKEND REQUIRED</span></div>
+  <h1>Add a command to the library.</h1>
+  <p>This editor runs in your browser. It loads the current JSON library, adds your entry, and downloads a replacement JSON file. Upload that file to your GitHub repository to publish it.</p>
+
+  <section class="card">
+    <div class="grid">
+      <div class="field"><label for="platform">Command environment</label><select id="platform"><option value="linux">Linux</option><option value="windows">Windows CMD</option></select></div>
+      <div class="field"><label>Current library size</label><input id="count" readonly value="Loading…"></div>
+      <div class="field"><label for="name">Command name *</label><input id="name" placeholder="e.g. journalctl or net user"></div>
+      <div class="field"><label for="category">Category *</label><input id="category" list="categories" placeholder="e.g. System & Diagnostics"><datalist id="categories"></datalist></div>
+      <div class="field full"><label for="summary">Short description *</label><input id="summary" placeholder="What does this command do?"></div>
+      <div class="field full"><label for="syntax">Syntax *</label><input id="syntax" placeholder="command [OPTIONS] TARGET"></div>
+      <div class="field"><label for="risk">Safety level</label><select id="risk"><option value="safe">Safe / informational</option><option value="caution">Use care</option><option value="danger">Destructive / high impact</option></select></div>
+      <div class="field"><label for="compatibility">Compatibility note</label><input id="compatibility" placeholder="e.g. Bash builtin; systemd-based Linux"></div>
+      <div class="field full"><label for="options">Options and switches</label><textarea id="options" placeholder="One per line: FLAG | What it does&#10;-a, --all | Include hidden entries&#10;-l | Use long format"></textarea><span class="hint">Format: <code>FLAG | explanation</code>. Leave blank if the command has no common options.</span></div>
+      <div class="field full"><label for="examples">Examples</label><textarea id="examples" placeholder="One per line: COMMAND | DESCRIPTION | SAMPLE OUTPUT&#10;ls -lah /home | List all entries with readable sizes | drwxr-xr-x ..."></textarea><span class="hint">Use <code>COMMAND | DESCRIPTION | SAMPLE OUTPUT</code>. Output is illustrative; it is never executed.</span></div>
+      <div class="field"><label for="related">Related commands</label><input id="related" placeholder="find, grep, stat"></div>
+      <div class="field"><label for="tags">Search tags</label><input id="tags" placeholder="logs, services, troubleshooting"></div>
+    </div>
+    <div class="buttons"><button class="primary" id="add">Add to library & prepare download</button><button id="preview">Preview entry JSON</button><button id="reset">Clear form</button></div>
+    <div class="status" id="status" role="status"></div>
+  </section>
+
+  <section class="card"><h2 style="font-size:16px;margin:0 0 8px">Entry preview</h2><pre id="preview-json">Your command record will appear here.</pre><div class="buttons"><button id="download">Download updated JSON</button><button id="copy">Copy entry JSON</button></div></section>
+
+  <section class="card"><h2 style="font-size:16px;margin:0 0 8px">Publish the change on GitHub Pages</h2><ol class="steps"><li>Choose Linux or Windows CMD and fill in the command details.</li><li>Click <strong>Add to library & prepare download</strong>. Your browser downloads the updated <code>linux.json</code> or <code>windows.json</code>.</li><li>Open your repository on GitHub and replace the matching file inside <code>data/</code> with the downloaded file.</li><li>Commit the change. GitHub Pages republishes the updated command library automatically.</li></ol><p><strong>Why download instead of saving directly?</strong> GitHub Pages is static hosting. A public web page cannot safely write to your repository. This editor prepares the updated file without needing a GitHub token or server.</p></section>
+</main>
+<script>
+(() => {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  const base = new URL('./', window.location.href);
+  const libraries = { linux: null, windows: null };
+  let pendingEntry = null;
+  let pendingPlatform = 'linux';
+  const fields = ['name','category','summary','syntax','risk','compatibility','options','examples','related','tags'];
+  const parseRows = (value, count) => value.split(/\r?\n/).map(line => line.trim()).filter(Boolean).map((line, i) => {
+    const parts = line.split('|').map(part => part.trim());
+    if (parts.length < count || parts.slice(0,count).some(part => !part)) throw new Error(`Line ${i+1} must contain ${count} fields separated by |.`);
+    return parts;
+  });
+  function setStatus(message, error=false) { $('status').textContent = message; $('status').classList.toggle('error', error); }
+  async function load(platform) {
+    if (libraries[platform]) return libraries[platform];
+    const response = await fetch(new URL(`data/${platform}.json`, base));
+    if (!response.ok) throw new Error(`Could not load data/${platform}.json (${response.status}).`);
+    libraries[platform] = await response.json();
+    return libraries[platform];
+  }
+  async function updateCount() {
+    const platform = $('platform').value;
+    try {
+      const data = await load(platform);
+      $('count').value = `${data.commands.length} commands currently published`;
+      const cats = [...new Set(data.commands.map(item => item.category))].sort();
+      $('categories').innerHTML = cats.map(cat => `<option value="${cat.replace(/[&<>"']/g, '')}"></option>`).join('');
+    } catch (error) { $('count').value = 'Could not load library'; setStatus(error.message, true); }
+  }
+  function buildEntry() {
+    const name = $('name').value.trim();
+    const category = $('category').value.trim();
+    const summary = $('summary').value.trim();
+    const syntax = $('syntax').value.trim();
+    if (!name || !category || !summary || !syntax) throw new Error('Command name, category, description, and syntax are required.');
+    const options = parseRows($('options').value, 2).map(([flag, description]) => ({flag, description}));
+    const examples = parseRows($('examples').value, 2).map(([command, description, output='']) => ({command, description, output}));
+    if (!examples.length) examples.push({command: name, description: summary, output: 'Example output depends on your system and arguments.'});
+    return {
+      name, category, summary, description: summary, syntax, options, examples,
+      risk: $('risk').value,
+      compatibility: $('compatibility').value.trim() || 'Check the relevant operating system version and installed utilities.',
+      tags: $('tags').value.split(',').map(x => x.trim()).filter(Boolean),
+      related: $('related').value.split(',').map(x => x.trim()).filter(Boolean)
+    };
+  }
+  function showPreview(entry) { $('preview-json').textContent = JSON.stringify(entry, null, 2); }
+  function download(platform) {
+    const data = libraries[platform];
+    if (!data) throw new Error('Load the selected library first.');
+    const blob = new Blob([JSON.stringify(data, null, 2) + '\n'], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a'); anchor.href = url; anchor.download = `${platform}.json`;
+    document.body.appendChild(anchor); anchor.click(); anchor.remove(); URL.revokeObjectURL(url);
+  }
+  $('platform').addEventListener('change', updateCount);
+  $('preview').addEventListener('click', () => {
+    try { pendingEntry = buildEntry(); pendingPlatform = $('platform').value; showPreview(pendingEntry); setStatus('Preview generated.'); }
+    catch (error) { setStatus(error.message, true); }
+  });
+  $('add').addEventListener('click', async () => {
+    try {
+      const platform = $('platform').value;
+      const data = await load(platform);
+      const entry = buildEntry();
+      if (data.commands.some(item => item.name.toLowerCase() === entry.name.toLowerCase())) throw new Error(`“${entry.name}” already exists in the ${platform} library.`);
+      data.commands.push(entry);
+      data.commands.sort((a,b) => a.name.localeCompare(b.name));
+      pendingEntry = entry; pendingPlatform = platform;
+      showPreview(entry); $('count').value = `${data.commands.length} commands (updated locally)`;
+      download(platform);
+      setStatus(`Added locally. Downloaded updated ${platform}.json — replace data/${platform}.json in your GitHub repository and commit it.`);
+    } catch (error) { setStatus(error.message, true); }
+  });
+  $('download').addEventListener('click', () => {
+    try { download(pendingPlatform); setStatus(`Downloaded updated ${pendingPlatform}.json.`); }
+    catch (error) { setStatus(error.message, true); }
+  });
+  $('copy').addEventListener('click', async () => {
+    try {
+      if (!pendingEntry) pendingEntry = buildEntry();
+      await navigator.clipboard.writeText(JSON.stringify(pendingEntry, null, 2));
+      setStatus('Entry JSON copied to clipboard.');
+    } catch (error) { setStatus(error.message || 'Clipboard access was blocked by the browser.', true); }
+  });
+  $('reset').addEventListener('click', () => { fields.forEach(id => $(id).value = id === 'risk' ? 'safe' : ''); pendingEntry = null; $('preview-json').textContent = 'Your command record will appear here.'; setStatus('Form cleared.'); });
+  updateCount();
+})();
+</script>
+</body>
+</html>
