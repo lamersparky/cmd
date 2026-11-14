@@ -1,0 +1,5197 @@
+{
+  "platform": "linux",
+  "title": "Linux Command Library",
+  "shell": "Bash and common GNU/Linux utilities",
+  "schema_version": 1,
+  "commands": [
+    {
+      "name": "alias",
+      "category": "Shell & Environment",
+      "summary": "Define or display command aliases.",
+      "description": "Define or display command aliases.",
+      "syntax": "alias [NAME[=VALUE]...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "alias",
+          "description": "Define or display command aliases.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Shell builtin; syntax varies slightly by shell.",
+      "tags": [],
+      "related": [
+        "unalias",
+        "type"
+      ]
+    },
+    {
+      "name": "apropos",
+      "category": "Help & Documentation",
+      "summary": "Search manual-page names and descriptions by keyword.",
+      "description": "Search manual-page names and descriptions by keyword.",
+      "syntax": "apropos KEYWORD",
+      "options": [],
+      "examples": [
+        {
+          "command": "apropos",
+          "description": "Search manual-page names and descriptions by keyword.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "man",
+        "whatis"
+      ]
+    },
+    {
+      "name": "apt",
+      "category": "Package Management",
+      "summary": "Manage packages on Debian and Ubuntu systems.",
+      "description": "Manage packages on Debian and Ubuntu systems.",
+      "syntax": "apt [OPTIONS] COMMAND",
+      "options": [
+        {
+          "flag": "update",
+          "description": "Refresh package indexes."
+        },
+        {
+          "flag": "upgrade",
+          "description": "Upgrade installed packages."
+        },
+        {
+          "flag": "install PACKAGE",
+          "description": "Install a package."
+        },
+        {
+          "flag": "remove PACKAGE",
+          "description": "Remove a package."
+        },
+        {
+          "flag": "search TERM",
+          "description": "Search package metadata."
+        }
+      ],
+      "examples": [
+        {
+          "command": "sudo apt update",
+          "description": "Refresh the local package indexes.",
+          "output": "Hit:1 http://archive.ubuntu.com/ubuntu ..."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Debian/Ubuntu family; typically requires sudo for system changes.",
+      "tags": [],
+      "related": [
+        "apt-get",
+        "dpkg"
+      ]
+    },
+    {
+      "name": "apt-get",
+      "category": "Package Management",
+      "summary": "Low-level APT package manager for Debian-based systems.",
+      "description": "Low-level APT package manager for Debian-based systems.",
+      "syntax": "apt-get [OPTIONS] COMMAND",
+      "options": [
+        {
+          "flag": "update",
+          "description": "Refresh package indexes."
+        },
+        {
+          "flag": "upgrade",
+          "description": "Upgrade packages."
+        },
+        {
+          "flag": "install PACKAGE",
+          "description": "Install packages."
+        },
+        {
+          "flag": "remove PACKAGE",
+          "description": "Remove packages."
+        },
+        {
+          "flag": "autoremove",
+          "description": "Remove unused dependencies."
+        }
+      ],
+      "examples": [
+        {
+          "command": "apt-get",
+          "description": "Low-level APT package manager for Debian-based systems.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Debian/Ubuntu family.",
+      "tags": [],
+      "related": [
+        "apt",
+        "dpkg"
+      ]
+    },
+    {
+      "name": "at",
+      "category": "System & Services",
+      "summary": "Schedule a command to run once at a specified time.",
+      "description": "Schedule a command to run once at a specified time.",
+      "syntax": "at [OPTIONS] TIME",
+      "options": [],
+      "examples": [
+        {
+          "command": "at",
+          "description": "Schedule a command to run once at a specified time.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Requires an at daemon/service to be installed and enabled.",
+      "tags": [],
+      "related": [
+        "crontab"
+      ]
+    },
+    {
+      "name": "awk",
+      "category": "Text Processing",
+      "summary": "Pattern scanning and processing language for structured text.",
+      "description": "Pattern scanning and processing language for structured text.",
+      "syntax": "awk [OPTIONS] PROGRAM [FILE...]",
+      "options": [
+        {
+          "flag": "-F SEP",
+          "description": "Set the input field separator."
+        },
+        {
+          "flag": "-v VAR=VALUE",
+          "description": "Assign a variable."
+        }
+      ],
+      "examples": [
+        {
+          "command": "awk -F: '{print $1}' /etc/passwd",
+          "description": "Print usernames from the colon-separated account file.",
+          "output": "root\ndaemon\nbin\n..."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "cut",
+        "sed",
+        "grep"
+      ]
+    },
+    {
+      "name": "basename",
+      "category": "Files & Directories",
+      "summary": "Strip directory components from a path.",
+      "description": "Strip directory components from a path.",
+      "syntax": "basename NAME [SUFFIX]",
+      "options": [],
+      "examples": [
+        {
+          "command": "basename",
+          "description": "Strip directory components from a path.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "dirname"
+      ]
+    },
+    {
+      "name": "bash",
+      "category": "Shell & Scripting",
+      "summary": "Start or run the Bash shell.",
+      "description": "Start or run the Bash shell.",
+      "syntax": "bash [OPTIONS] [SCRIPT [ARGUMENTS...]]",
+      "options": [
+        {
+          "flag": "-c STRING",
+          "description": "Execute a command string."
+        },
+        {
+          "flag": "-n",
+          "description": "Read commands without executing them."
+        },
+        {
+          "flag": "-x",
+          "description": "Trace commands as they execute."
+        }
+      ],
+      "examples": [
+        {
+          "command": "bash",
+          "description": "Start or run the Bash shell.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Bash shell; scripts may not be POSIX-portable.",
+      "tags": [],
+      "related": [
+        "sh",
+        "zsh"
+      ]
+    },
+    {
+      "name": "bg",
+      "category": "Processes & Jobs",
+      "summary": "Resume a suspended job in the background.",
+      "description": "Resume a suspended job in the background.",
+      "syntax": "bg [JOBSPEC]",
+      "options": [],
+      "examples": [
+        {
+          "command": "bg",
+          "description": "Resume a suspended job in the background.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Shell builtin; requires job control.",
+      "tags": [],
+      "related": [
+        "fg",
+        "jobs"
+      ]
+    },
+    {
+      "name": "blkid",
+      "category": "Storage & Filesystems",
+      "summary": "Locate or print block-device attributes such as UUID and filesystem type.",
+      "description": "Locate or print block-device attributes such as UUID and filesystem type.",
+      "syntax": "blkid [OPTIONS] [DEVICE...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "blkid",
+          "description": "Locate or print block-device attributes such as UUID and filesystem type.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "lsblk",
+        "findmnt"
+      ]
+    },
+    {
+      "name": "bzip2",
+      "category": "Archives & Compression",
+      "summary": "Compress or decompress using bzip2.",
+      "description": "Compress or decompress using bzip2.",
+      "syntax": "bzip2 [OPTIONS] [FILE...]",
+      "options": [
+        {
+          "flag": "-d",
+          "description": "Decompress."
+        },
+        {
+          "flag": "-k",
+          "description": "Keep input files."
+        }
+      ],
+      "examples": [
+        {
+          "command": "bzip2",
+          "description": "Compress or decompress using bzip2.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "xz",
+        "gzip"
+      ]
+    },
+    {
+      "name": "cal",
+      "category": "System & Diagnostics",
+      "summary": "Display a calendar.",
+      "description": "Display a calendar.",
+      "syntax": "cal [OPTIONS] [[MONTH] YEAR]",
+      "options": [],
+      "examples": [
+        {
+          "command": "cal",
+          "description": "Display a calendar.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "date"
+      ]
+    },
+    {
+      "name": "cat",
+      "category": "Text Processing",
+      "summary": "Concatenate files and print them to standard output.",
+      "description": "Concatenate files and print them to standard output.",
+      "syntax": "cat [OPTION]... [FILE]...",
+      "options": [
+        {
+          "flag": "-n",
+          "description": "Number all output lines."
+        },
+        {
+          "flag": "-b",
+          "description": "Number nonempty lines."
+        },
+        {
+          "flag": "-A",
+          "description": "Show nonprinting characters."
+        }
+      ],
+      "examples": [
+        {
+          "command": "cat notes.txt",
+          "description": "Print a text file.",
+          "output": "Remember to back up the project.\nReview system logs."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "less",
+        "head",
+        "tail"
+      ]
+    },
+    {
+      "name": "cd",
+      "category": "Shell & Navigation",
+      "summary": "Change the current directory.",
+      "description": "Change the current directory.",
+      "syntax": "cd [DIRECTORY]",
+      "options": [
+        {
+          "flag": "-",
+          "description": "Return to the previous working directory."
+        },
+        {
+          "flag": "..",
+          "description": "Move to the parent directory."
+        },
+        {
+          "flag": "~",
+          "description": "Move to the home directory."
+        }
+      ],
+      "examples": [
+        {
+          "command": "cd ~/Documents",
+          "description": "Move into Documents in your home directory.",
+          "output": "(no output)"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Bash and other POSIX-like shells; shell builtin.",
+      "tags": [],
+      "related": [
+        "pwd",
+        "pushd",
+        "popd"
+      ]
+    },
+    {
+      "name": "chgrp",
+      "category": "Permissions & Users",
+      "summary": "Change the group ownership of files.",
+      "description": "Change the group ownership of files.",
+      "syntax": "chgrp [OPTION]... GROUP FILE...",
+      "options": [
+        {
+          "flag": "-R",
+          "description": "Operate recursively."
+        }
+      ],
+      "examples": [
+        {
+          "command": "chgrp",
+          "description": "Change the group ownership of files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "chown",
+        "chmod"
+      ]
+    },
+    {
+      "name": "chmod",
+      "category": "Permissions & Users",
+      "summary": "Change file and directory permission bits.",
+      "description": "Change file and directory permission bits.",
+      "syntax": "chmod [OPTION]... MODE FILE...",
+      "options": [
+        {
+          "flag": "-R",
+          "description": "Change permissions recursively."
+        },
+        {
+          "flag": "-v",
+          "description": "Report each processed file."
+        },
+        {
+          "flag": "--reference=FILE",
+          "description": "Use another file’s mode."
+        }
+      ],
+      "examples": [
+        {
+          "command": "chmod 640 private.txt",
+          "description": "Give owner read/write, group read, and no permissions to others.",
+          "output": "(no output)"
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "chown",
+        "umask",
+        "getfacl"
+      ]
+    },
+    {
+      "name": "chown",
+      "category": "Permissions & Users",
+      "summary": "Change file owner and optionally group.",
+      "description": "Change file owner and optionally group.",
+      "syntax": "chown [OPTION]... [OWNER][:[GROUP]] FILE...",
+      "options": [
+        {
+          "flag": "-R",
+          "description": "Operate recursively."
+        },
+        {
+          "flag": "-h",
+          "description": "Affect symbolic links rather than their targets, where supported."
+        }
+      ],
+      "examples": [
+        {
+          "command": "chown",
+          "description": "Change file owner and optionally group.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "chmod",
+        "chgrp"
+      ]
+    },
+    {
+      "name": "clear",
+      "category": "Shell & Navigation",
+      "summary": "Clear the terminal display.",
+      "description": "Clear the terminal display.",
+      "syntax": "clear",
+      "options": [],
+      "examples": [
+        {
+          "command": "clear",
+          "description": "Clear the terminal display.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Terminal utility; behavior depends on TERM and terminal emulator.",
+      "tags": [],
+      "related": [
+        "reset"
+      ]
+    },
+    {
+      "name": "cmake",
+      "category": "Development & Version Control",
+      "summary": "Configure and generate cross-platform build systems.",
+      "description": "Configure and generate cross-platform build systems.",
+      "syntax": "cmake [OPTIONS] -S SOURCE -B BUILD",
+      "options": [
+        {
+          "flag": "-S DIR",
+          "description": "Set source directory."
+        },
+        {
+          "flag": "-B DIR",
+          "description": "Set build directory."
+        },
+        {
+          "flag": "--build DIR",
+          "description": "Build a configured tree."
+        },
+        {
+          "flag": "-DVAR=VALUE",
+          "description": "Set a cache variable."
+        }
+      ],
+      "examples": [
+        {
+          "command": "cmake",
+          "description": "Configure and generate cross-platform build systems.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "make",
+        "ninja"
+      ]
+    },
+    {
+      "name": "cmp",
+      "category": "Text Processing",
+      "summary": "Compare two files byte by byte.",
+      "description": "Compare two files byte by byte.",
+      "syntax": "cmp [OPTION]... FILE1 FILE2",
+      "options": [],
+      "examples": [
+        {
+          "command": "cmp",
+          "description": "Compare two files byte by byte.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "diff",
+        "sha256sum"
+      ]
+    },
+    {
+      "name": "comm",
+      "category": "Text Processing",
+      "summary": "Compare two sorted files line by line.",
+      "description": "Compare two sorted files line by line.",
+      "syntax": "comm [OPTION]... FILE1 FILE2",
+      "options": [],
+      "examples": [
+        {
+          "command": "comm",
+          "description": "Compare two sorted files line by line.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "diff",
+        "sort",
+        "uniq"
+      ]
+    },
+    {
+      "name": "command",
+      "category": "Shell & Navigation",
+      "summary": "Run a command while bypassing shell function lookup, or inspect command resolution.",
+      "description": "Run a command while bypassing shell function lookup, or inspect command resolution.",
+      "syntax": "command [-vV] NAME [ARG...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "command",
+          "description": "Run a command while bypassing shell function lookup, or inspect command resolution.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "POSIX shell builtin.",
+      "tags": [],
+      "related": [
+        "type",
+        "exec"
+      ]
+    },
+    {
+      "name": "cp",
+      "category": "Files & Directories",
+      "summary": "Copy files and directories.",
+      "description": "Copy files and directories.",
+      "syntax": "cp [OPTION]... SOURCE DEST",
+      "options": [
+        {
+          "flag": "-r, -R",
+          "description": "Copy directories recursively."
+        },
+        {
+          "flag": "-i",
+          "description": "Prompt before overwriting."
+        },
+        {
+          "flag": "-a",
+          "description": "Archive mode; preserve attributes and links."
+        },
+        {
+          "flag": "-v",
+          "description": "Explain what is being copied."
+        }
+      ],
+      "examples": [
+        {
+          "command": "cp -i report.txt backup/",
+          "description": "Copy a file and prompt before overwrite.",
+          "output": "(copy confirmation depends on destination)"
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "mv",
+        "rsync"
+      ]
+    },
+    {
+      "name": "crontab",
+      "category": "System & Services",
+      "summary": "Install, list, or edit per-user scheduled jobs.",
+      "description": "Install, list, or edit per-user scheduled jobs.",
+      "syntax": "crontab [OPTION]",
+      "options": [
+        {
+          "flag": "-e",
+          "description": "Edit the current user crontab."
+        },
+        {
+          "flag": "-l",
+          "description": "List the crontab."
+        },
+        {
+          "flag": "-r",
+          "description": "Remove the crontab."
+        }
+      ],
+      "examples": [
+        {
+          "command": "crontab",
+          "description": "Install, list, or edit per-user scheduled jobs.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "at",
+        "systemctl"
+      ]
+    },
+    {
+      "name": "curl",
+      "category": "Networking & Transfers",
+      "summary": "Transfer data to or from URLs.",
+      "description": "Transfer data to or from URLs.",
+      "syntax": "curl [OPTIONS] URL",
+      "options": [
+        {
+          "flag": "-I",
+          "description": "Fetch response headers only."
+        },
+        {
+          "flag": "-L",
+          "description": "Follow redirects."
+        },
+        {
+          "flag": "-o FILE",
+          "description": "Write output to a file."
+        },
+        {
+          "flag": "-O",
+          "description": "Save using the remote filename."
+        },
+        {
+          "flag": "-d DATA",
+          "description": "Send request data."
+        }
+      ],
+      "examples": [
+        {
+          "command": "curl -I https://example.com",
+          "description": "Request response headers.",
+          "output": "HTTP/2 200\ncontent-type: text/html"
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "wget",
+        "httpie"
+      ]
+    },
+    {
+      "name": "cut",
+      "category": "Text Processing",
+      "summary": "Remove sections from each line of input.",
+      "description": "Remove sections from each line of input.",
+      "syntax": "cut OPTION... [FILE]...",
+      "options": [
+        {
+          "flag": "-d DELIM",
+          "description": "Use DELIM as the field delimiter."
+        },
+        {
+          "flag": "-f LIST",
+          "description": "Select fields."
+        },
+        {
+          "flag": "-c LIST",
+          "description": "Select character positions."
+        }
+      ],
+      "examples": [
+        {
+          "command": "cut",
+          "description": "Remove sections from each line of input.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "awk",
+        "paste"
+      ]
+    },
+    {
+      "name": "date",
+      "category": "System & Diagnostics",
+      "summary": "Display or set the system date and time.",
+      "description": "Display or set the system date and time.",
+      "syntax": "date [OPTION]... [+FORMAT]",
+      "options": [
+        {
+          "flag": "+%F",
+          "description": "Format date as YYYY-MM-DD."
+        },
+        {
+          "flag": "+%T",
+          "description": "Format time as HH:MM:SS."
+        },
+        {
+          "flag": "-u",
+          "description": "Display UTC time."
+        }
+      ],
+      "examples": [
+        {
+          "command": "date",
+          "description": "Display or set the system date and time.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "timedatectl",
+        "cal"
+      ]
+    },
+    {
+      "name": "dd",
+      "category": "Storage & Filesystems",
+      "summary": "Copy and convert data at a low level.",
+      "description": "Copy and convert data at a low level.",
+      "syntax": "dd [OPERAND]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "dd",
+          "description": "Copy and convert data at a low level.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "A wrong output target can overwrite an entire disk. Verify device names carefully.",
+      "tags": [],
+      "related": [
+        "cp",
+        "shred"
+      ]
+    },
+    {
+      "name": "df",
+      "category": "Storage & Filesystems",
+      "summary": "Report filesystem disk-space usage.",
+      "description": "Report filesystem disk-space usage.",
+      "syntax": "df [OPTION]... [FILE]...",
+      "options": [
+        {
+          "flag": "-h",
+          "description": "Human-readable sizes."
+        },
+        {
+          "flag": "-T",
+          "description": "Show filesystem type."
+        },
+        {
+          "flag": "-i",
+          "description": "Show inode usage."
+        }
+      ],
+      "examples": [
+        {
+          "command": "df -h",
+          "description": "Show mounted filesystem capacity in readable units.",
+          "output": "Filesystem  Size Used Avail Use% Mounted on\n/dev/sda2    80G  32G   44G  43% /"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "du",
+        "lsblk"
+      ]
+    },
+    {
+      "name": "diff",
+      "category": "Text Processing",
+      "summary": "Compare files line by line.",
+      "description": "Compare files line by line.",
+      "syntax": "diff [OPTION]... FILES",
+      "options": [
+        {
+          "flag": "-u",
+          "description": "Show unified diff format."
+        },
+        {
+          "flag": "-r",
+          "description": "Compare directories recursively."
+        }
+      ],
+      "examples": [
+        {
+          "command": "diff",
+          "description": "Compare files line by line.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "cmp",
+        "comm",
+        "git"
+      ]
+    },
+    {
+      "name": "dig",
+      "category": "Networking",
+      "summary": "Query DNS name servers.",
+      "description": "Query DNS name servers.",
+      "syntax": "dig [@SERVER] NAME [TYPE]",
+      "options": [],
+      "examples": [
+        {
+          "command": "dig",
+          "description": "Query DNS name servers.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "nslookup",
+        "host"
+      ]
+    },
+    {
+      "name": "dirname",
+      "category": "Files & Directories",
+      "summary": "Print the directory portion of a path.",
+      "description": "Print the directory portion of a path.",
+      "syntax": "dirname NAME",
+      "options": [],
+      "examples": [
+        {
+          "command": "dirname",
+          "description": "Print the directory portion of a path.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "basename"
+      ]
+    },
+    {
+      "name": "dirs",
+      "category": "Shell & Navigation",
+      "summary": "Display the directory stack.",
+      "description": "Display the directory stack.",
+      "syntax": "dirs [-clpv]",
+      "options": [],
+      "examples": [
+        {
+          "command": "dirs",
+          "description": "Display the directory stack.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Bash and other shells; shell builtin.",
+      "tags": [],
+      "related": [
+        "pushd",
+        "popd"
+      ]
+    },
+    {
+      "name": "dmesg",
+      "category": "System & Diagnostics",
+      "summary": "Display kernel ring-buffer messages.",
+      "description": "Display kernel ring-buffer messages.",
+      "syntax": "dmesg [OPTIONS]",
+      "options": [
+        {
+          "flag": "-T",
+          "description": "Try to show human-readable timestamps."
+        },
+        {
+          "flag": "-w",
+          "description": "Wait for new messages."
+        }
+      ],
+      "examples": [
+        {
+          "command": "dmesg",
+          "description": "Display kernel ring-buffer messages.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "journalctl",
+        "kern"
+      ]
+    },
+    {
+      "name": "dnf",
+      "category": "Package Management",
+      "summary": "Manage software packages on Fedora and related systems.",
+      "description": "Manage software packages on Fedora and related systems.",
+      "syntax": "dnf [OPTIONS] COMMAND",
+      "options": [
+        {
+          "flag": "install PACKAGE",
+          "description": "Install packages."
+        },
+        {
+          "flag": "upgrade",
+          "description": "Upgrade packages."
+        },
+        {
+          "flag": "remove PACKAGE",
+          "description": "Remove packages."
+        },
+        {
+          "flag": "search TERM",
+          "description": "Search packages."
+        }
+      ],
+      "examples": [
+        {
+          "command": "dnf",
+          "description": "Manage software packages on Fedora and related systems.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Fedora and distributions using DNF.",
+      "tags": [],
+      "related": [
+        "rpm",
+        "yum"
+      ]
+    },
+    {
+      "name": "dpkg",
+      "category": "Package Management",
+      "summary": "Install, inspect, and remove Debian package files.",
+      "description": "Install, inspect, and remove Debian package files.",
+      "syntax": "dpkg [OPTIONS] ACTION",
+      "options": [
+        {
+          "flag": "-i FILE.deb",
+          "description": "Install a package file."
+        },
+        {
+          "flag": "-l",
+          "description": "List packages."
+        },
+        {
+          "flag": "-r PACKAGE",
+          "description": "Remove a package."
+        },
+        {
+          "flag": "-S PATH",
+          "description": "Find the package owning a path."
+        }
+      ],
+      "examples": [
+        {
+          "command": "dpkg",
+          "description": "Install, inspect, and remove Debian package files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Debian package format.",
+      "tags": [],
+      "related": [
+        "apt",
+        "apt-get"
+      ]
+    },
+    {
+      "name": "du",
+      "category": "Storage & Filesystems",
+      "summary": "Estimate file and directory space usage.",
+      "description": "Estimate file and directory space usage.",
+      "syntax": "du [OPTION]... [FILE]...",
+      "options": [
+        {
+          "flag": "-h",
+          "description": "Human-readable sizes."
+        },
+        {
+          "flag": "-s",
+          "description": "Display a total for each argument."
+        },
+        {
+          "flag": "-d N",
+          "description": "Limit directory depth to N."
+        }
+      ],
+      "examples": [
+        {
+          "command": "du -sh ~/Downloads",
+          "description": "Show the total size of Downloads.",
+          "output": "2.4G  /home/lamer/Downloads"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "df",
+        "ncdu"
+      ]
+    },
+    {
+      "name": "echo",
+      "category": "Shell & Text",
+      "summary": "Print text or variable values.",
+      "description": "Print text or variable values.",
+      "syntax": "echo [OPTION]... [STRING]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "echo",
+          "description": "Print text or variable values.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Commonly a shell builtin; escape handling varies by shell.",
+      "tags": [],
+      "related": [
+        "printf",
+        "export"
+      ]
+    },
+    {
+      "name": "env",
+      "category": "System & Diagnostics",
+      "summary": "Run a command with a modified environment or display environment variables.",
+      "description": "Run a command with a modified environment or display environment variables.",
+      "syntax": "env [OPTION]... [NAME=VALUE]... [COMMAND [ARG]...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "env",
+          "description": "Run a command with a modified environment or display environment variables.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "printenv",
+        "export"
+      ]
+    },
+    {
+      "name": "ethtool",
+      "category": "Networking",
+      "summary": "Query or configure Ethernet device settings.",
+      "description": "Query or configure Ethernet device settings.",
+      "syntax": "ethtool [OPTIONS] DEVICE",
+      "options": [],
+      "examples": [
+        {
+          "command": "ethtool",
+          "description": "Query or configure Ethernet device settings.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Requires ethtool and appropriate device permissions.",
+      "tags": [],
+      "related": [
+        "ip",
+        "nmcli"
+      ]
+    },
+    {
+      "name": "exec",
+      "category": "Shell & Scripting",
+      "summary": "Replace the current shell process with a command or alter file descriptors.",
+      "description": "Replace the current shell process with a command or alter file descriptors.",
+      "syntax": "exec [COMMAND [ARGUMENTS...]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "exec",
+          "description": "Replace the current shell process with a command or alter file descriptors.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Shell builtin.",
+      "tags": [],
+      "related": [
+        "command",
+        "nohup"
+      ]
+    },
+    {
+      "name": "export",
+      "category": "Shell & Environment",
+      "summary": "Set environment variables for child processes.",
+      "description": "Set environment variables for child processes.",
+      "syntax": "export [-fn] [NAME[=VALUE]...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "export",
+          "description": "Set environment variables for child processes.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Bash and POSIX-like shell builtin.",
+      "tags": [],
+      "related": [
+        "env",
+        "unset"
+      ]
+    },
+    {
+      "name": "fdisk",
+      "category": "Storage & Filesystems",
+      "summary": "Manage disk partition tables.",
+      "description": "Manage disk partition tables.",
+      "syntax": "fdisk [OPTIONS] DEVICE",
+      "options": [],
+      "examples": [
+        {
+          "command": "fdisk",
+          "description": "Manage disk partition tables.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Partition-table changes can destroy access to data; inspect before writing.",
+      "tags": [],
+      "related": [
+        "parted",
+        "lsblk"
+      ]
+    },
+    {
+      "name": "fg",
+      "category": "Processes & Jobs",
+      "summary": "Bring a job to the foreground.",
+      "description": "Bring a job to the foreground.",
+      "syntax": "fg [JOBSPEC]",
+      "options": [],
+      "examples": [
+        {
+          "command": "fg",
+          "description": "Bring a job to the foreground.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Shell builtin; requires job control.",
+      "tags": [],
+      "related": [
+        "bg",
+        "jobs"
+      ]
+    },
+    {
+      "name": "file",
+      "category": "Files & Directories",
+      "summary": "Determine file type from its contents.",
+      "description": "Determine file type from its contents.",
+      "syntax": "file [OPTION]... FILE...",
+      "options": [
+        {
+          "flag": "-i",
+          "description": "Show MIME type information."
+        },
+        {
+          "flag": "-L",
+          "description": "Follow symbolic links."
+        }
+      ],
+      "examples": [
+        {
+          "command": "file",
+          "description": "Determine file type from its contents.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "stat",
+        "xxd"
+      ]
+    },
+    {
+      "name": "find",
+      "category": "Files & Directories",
+      "summary": "Search directory trees by name, type, time, size, and more.",
+      "description": "Search directory trees by name, type, time, size, and more.",
+      "syntax": "find [PATH...] [EXPRESSION]",
+      "options": [
+        {
+          "flag": "-name PATTERN",
+          "description": "Match a filename pattern."
+        },
+        {
+          "flag": "-type TYPE",
+          "description": "Filter by file type, such as f or d."
+        },
+        {
+          "flag": "-mtime N",
+          "description": "Filter by modification age in days."
+        },
+        {
+          "flag": "-size N",
+          "description": "Filter by file size."
+        },
+        {
+          "flag": "-exec CMD {} \\;",
+          "description": "Run a command for each match."
+        }
+      ],
+      "examples": [
+        {
+          "command": "find . -type f -name '*.log'",
+          "description": "Find regular files ending in .log beneath the current directory.",
+          "output": "./logs/app.log\n./old/system.log"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "locate",
+        "grep",
+        "xargs"
+      ]
+    },
+    {
+      "name": "findmnt",
+      "category": "Storage & Filesystems",
+      "summary": "Display mounted filesystems.",
+      "description": "Display mounted filesystems.",
+      "syntax": "findmnt [OPTIONS] [TARGET]",
+      "options": [],
+      "examples": [
+        {
+          "command": "findmnt",
+          "description": "Display mounted filesystems.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "mount",
+        "lsblk"
+      ]
+    },
+    {
+      "name": "firewall-cmd",
+      "category": "Networking & Security",
+      "summary": "Manage firewalld firewall rules and zones.",
+      "description": "Manage firewalld firewall rules and zones.",
+      "syntax": "firewall-cmd [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "firewall-cmd",
+          "description": "Manage firewalld firewall rules and zones.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Requires firewalld; distribution defaults vary.",
+      "tags": [],
+      "related": [
+        "ufw",
+        "nft"
+      ]
+    },
+    {
+      "name": "free",
+      "category": "Processes & Jobs",
+      "summary": "Display memory and swap usage.",
+      "description": "Display memory and swap usage.",
+      "syntax": "free [OPTION]...",
+      "options": [
+        {
+          "flag": "-h",
+          "description": "Human-readable units."
+        },
+        {
+          "flag": "-m",
+          "description": "Display values in mebibytes."
+        },
+        {
+          "flag": "-s N",
+          "description": "Repeat every N seconds."
+        }
+      ],
+      "examples": [
+        {
+          "command": "free",
+          "description": "Display memory and swap usage.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "vmstat",
+        "top"
+      ]
+    },
+    {
+      "name": "fsck",
+      "category": "Storage & Filesystems",
+      "summary": "Check and optionally repair a filesystem.",
+      "description": "Check and optionally repair a filesystem.",
+      "syntax": "fsck [OPTIONS] [FILESYSTEM...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "fsck",
+          "description": "Check and optionally repair a filesystem.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Filesystem must generally be unmounted; repair behavior depends on filesystem type.",
+      "tags": [],
+      "related": [
+        "mkfs",
+        "tune2fs"
+      ]
+    },
+    {
+      "name": "g++",
+      "category": "Development & Version Control",
+      "summary": "Compile C++ source code with the GNU Compiler Collection.",
+      "description": "Compile C++ source code with the GNU Compiler Collection.",
+      "syntax": "g++ [OPTIONS] FILE...",
+      "options": [
+        {
+          "flag": "-std=c++17",
+          "description": "Select the C++17 language standard."
+        },
+        {
+          "flag": "-o FILE",
+          "description": "Set output filename."
+        },
+        {
+          "flag": "-Wall -Wextra",
+          "description": "Enable common warnings."
+        },
+        {
+          "flag": "-g",
+          "description": "Include debugging information."
+        }
+      ],
+      "examples": [
+        {
+          "command": "g++",
+          "description": "Compile C++ source code with the GNU Compiler Collection.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Requires G++ toolchain.",
+      "tags": [],
+      "related": [
+        "gcc",
+        "cmake",
+        "make"
+      ]
+    },
+    {
+      "name": "gcc",
+      "category": "Development & Version Control",
+      "summary": "Compile C source code with the GNU Compiler Collection.",
+      "description": "Compile C source code with the GNU Compiler Collection.",
+      "syntax": "gcc [OPTIONS] FILE...",
+      "options": [
+        {
+          "flag": "-o FILE",
+          "description": "Set output filename."
+        },
+        {
+          "flag": "-Wall -Wextra",
+          "description": "Enable common warnings."
+        },
+        {
+          "flag": "-g",
+          "description": "Include debugging information."
+        },
+        {
+          "flag": "-O2",
+          "description": "Optimize generated code."
+        }
+      ],
+      "examples": [
+        {
+          "command": "gcc",
+          "description": "Compile C source code with the GNU Compiler Collection.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Requires GCC toolchain and development headers as needed.",
+      "tags": [],
+      "related": [
+        "g++",
+        "make",
+        "clang"
+      ]
+    },
+    {
+      "name": "getfacl",
+      "category": "Permissions & Users",
+      "summary": "Display file access-control lists.",
+      "description": "Display file access-control lists.",
+      "syntax": "getfacl [OPTION]... FILE...",
+      "options": [],
+      "examples": [
+        {
+          "command": "getfacl",
+          "description": "Display file access-control lists.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Requires ACL utilities on many distributions.",
+      "tags": [],
+      "related": [
+        "setfacl",
+        "chmod"
+      ]
+    },
+    {
+      "name": "git",
+      "category": "Development & Version Control",
+      "summary": "Track changes and collaborate on source code.",
+      "description": "Track changes and collaborate on source code.",
+      "syntax": "git [--version] [--help] <command> [<args>]",
+      "options": [
+        {
+          "flag": "status",
+          "description": "Show working-tree state."
+        },
+        {
+          "flag": "add FILE",
+          "description": "Stage changes."
+        },
+        {
+          "flag": "commit -m MSG",
+          "description": "Create a commit."
+        },
+        {
+          "flag": "log --oneline",
+          "description": "Show compact commit history."
+        },
+        {
+          "flag": "diff",
+          "description": "Show unstaged changes."
+        }
+      ],
+      "examples": [
+        {
+          "command": "git status",
+          "description": "Show changed, staged, and untracked files.",
+          "output": "On branch main\nnothing to commit, working tree clean"
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "git-log",
+        "git-diff"
+      ]
+    },
+    {
+      "name": "gpg",
+      "category": "Security & Keys",
+      "summary": "Encrypt, decrypt, sign, and verify data using OpenPGP.",
+      "description": "Encrypt, decrypt, sign, and verify data using OpenPGP.",
+      "syntax": "gpg [OPTIONS] [FILE...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "gpg",
+          "description": "Encrypt, decrypt, sign, and verify data using OpenPGP.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "ssh-keygen",
+        "openssl"
+      ]
+    },
+    {
+      "name": "grep",
+      "category": "Text Processing",
+      "summary": "Search text using patterns.",
+      "description": "Search text using patterns.",
+      "syntax": "grep [OPTION]... PATTERN [FILE...]",
+      "options": [
+        {
+          "flag": "-i",
+          "description": "Ignore case."
+        },
+        {
+          "flag": "-r, -R",
+          "description": "Search directories recursively."
+        },
+        {
+          "flag": "-n",
+          "description": "Show line numbers."
+        },
+        {
+          "flag": "-v",
+          "description": "Select nonmatching lines."
+        },
+        {
+          "flag": "-E",
+          "description": "Use extended regular expressions."
+        }
+      ],
+      "examples": [
+        {
+          "command": "grep -rin 'error' /var/log",
+          "description": "Search log files recursively for error, ignoring case.",
+          "output": "/var/log/app.log:42:ERROR connection failed"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "rg",
+        "find",
+        "sed"
+      ]
+    },
+    {
+      "name": "groupadd",
+      "category": "Permissions & Users",
+      "summary": "Create a group.",
+      "description": "Create a group.",
+      "syntax": "groupadd [OPTIONS] GROUP",
+      "options": [
+        {
+          "flag": "-g GID",
+          "description": "Set a numeric group ID."
+        },
+        {
+          "flag": "-r",
+          "description": "Create a system group."
+        }
+      ],
+      "examples": [
+        {
+          "command": "groupadd",
+          "description": "Create a group.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "groupdel",
+        "groupmod"
+      ]
+    },
+    {
+      "name": "groupdel",
+      "category": "Permissions & Users",
+      "summary": "Delete a group.",
+      "description": "Delete a group.",
+      "syntax": "groupdel GROUP",
+      "options": [],
+      "examples": [
+        {
+          "command": "groupdel",
+          "description": "Delete a group.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "groupadd",
+        "groupmod"
+      ]
+    },
+    {
+      "name": "groups",
+      "category": "Permissions & Users",
+      "summary": "Print group memberships.",
+      "description": "Print group memberships.",
+      "syntax": "groups [USER]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "groups",
+          "description": "Print group memberships.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "id",
+        "getent"
+      ]
+    },
+    {
+      "name": "gunzip",
+      "category": "Archives & Compression",
+      "summary": "Decompress gzip files.",
+      "description": "Decompress gzip files.",
+      "syntax": "gunzip [OPTIONS] FILE...",
+      "options": [],
+      "examples": [
+        {
+          "command": "gunzip",
+          "description": "Decompress gzip files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "gzip",
+        "tar"
+      ]
+    },
+    {
+      "name": "gzip",
+      "category": "Archives & Compression",
+      "summary": "Compress files using gzip.",
+      "description": "Compress files using gzip.",
+      "syntax": "gzip [OPTIONS] [FILE...]",
+      "options": [
+        {
+          "flag": "-d",
+          "description": "Decompress."
+        },
+        {
+          "flag": "-k",
+          "description": "Keep the original file."
+        },
+        {
+          "flag": "-c",
+          "description": "Write output to standard output."
+        }
+      ],
+      "examples": [
+        {
+          "command": "gzip",
+          "description": "Compress files using gzip.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "gunzip",
+        "tar"
+      ]
+    },
+    {
+      "name": "head",
+      "category": "Text Processing",
+      "summary": "Print the first lines of files.",
+      "description": "Print the first lines of files.",
+      "syntax": "head [OPTION]... [FILE]...",
+      "options": [
+        {
+          "flag": "-n N",
+          "description": "Print the first N lines."
+        },
+        {
+          "flag": "-c N",
+          "description": "Print the first N bytes."
+        }
+      ],
+      "examples": [
+        {
+          "command": "head",
+          "description": "Print the first lines of files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "tail",
+        "cat"
+      ]
+    },
+    {
+      "name": "help",
+      "category": "Help & Documentation",
+      "summary": "Display help for shell builtins.",
+      "description": "Display help for shell builtins.",
+      "syntax": "help [PATTERN]",
+      "options": [],
+      "examples": [
+        {
+          "command": "help",
+          "description": "Display help for shell builtins.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Bash builtin; other shells use different help systems.",
+      "tags": [],
+      "related": [
+        "man",
+        "type"
+      ]
+    },
+    {
+      "name": "history",
+      "category": "Shell & Environment",
+      "summary": "Display or manipulate command history.",
+      "description": "Display or manipulate command history.",
+      "syntax": "history [N]",
+      "options": [],
+      "examples": [
+        {
+          "command": "history",
+          "description": "Display or manipulate command history.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Shell builtin; history persistence depends on shell settings.",
+      "tags": [],
+      "related": [
+        "fc",
+        "clear"
+      ]
+    },
+    {
+      "name": "host",
+      "category": "Networking",
+      "summary": "Perform DNS lookups.",
+      "description": "Perform DNS lookups.",
+      "syntax": "host [OPTIONS] NAME [SERVER]",
+      "options": [],
+      "examples": [
+        {
+          "command": "host",
+          "description": "Perform DNS lookups.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "dig",
+        "nslookup"
+      ]
+    },
+    {
+      "name": "hostname",
+      "category": "System & Diagnostics",
+      "summary": "Show or set the system hostname.",
+      "description": "Show or set the system hostname.",
+      "syntax": "hostname [OPTION] [NAME]",
+      "options": [],
+      "examples": [
+        {
+          "command": "hostname",
+          "description": "Show or set the system hostname.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "hostnamectl",
+        "uname"
+      ]
+    },
+    {
+      "name": "hostnamectl",
+      "category": "System & Diagnostics",
+      "summary": "Query or change system hostname and related settings.",
+      "description": "Query or change system hostname and related settings.",
+      "syntax": "hostnamectl [OPTIONS] COMMAND",
+      "options": [],
+      "examples": [
+        {
+          "command": "hostnamectl",
+          "description": "Query or change system hostname and related settings.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "systemd-based distributions.",
+      "tags": [],
+      "related": [
+        "hostname",
+        "timedatectl"
+      ]
+    },
+    {
+      "name": "htop",
+      "category": "Processes & Jobs",
+      "summary": "Interactive process viewer.",
+      "description": "Interactive process viewer.",
+      "syntax": "htop [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "htop",
+          "description": "Interactive process viewer.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Optional package; not installed on every system.",
+      "tags": [],
+      "related": [
+        "top",
+        "ps"
+      ]
+    },
+    {
+      "name": "id",
+      "category": "Permissions & Users",
+      "summary": "Print user and group identity information.",
+      "description": "Print user and group identity information.",
+      "syntax": "id [OPTION]... [USER]",
+      "options": [],
+      "examples": [
+        {
+          "command": "id",
+          "description": "Print user and group identity information.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "whoami",
+        "groups"
+      ]
+    },
+    {
+      "name": "info",
+      "category": "Help & Documentation",
+      "summary": "Read GNU Info documentation.",
+      "description": "Read GNU Info documentation.",
+      "syntax": "info [OPTION]... [MENU-ITEM...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "info",
+          "description": "Read GNU Info documentation.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "man",
+        "help"
+      ]
+    },
+    {
+      "name": "iostat",
+      "category": "Processes & Jobs",
+      "summary": "Report CPU and I/O statistics.",
+      "description": "Report CPU and I/O statistics.",
+      "syntax": "iostat [OPTIONS] [INTERVAL [COUNT]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "iostat",
+          "description": "Report CPU and I/O statistics.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Usually provided by the sysstat package.",
+      "tags": [],
+      "related": [
+        "vmstat",
+        "iotop"
+      ]
+    },
+    {
+      "name": "ip",
+      "category": "Networking",
+      "summary": "Show and configure network interfaces, addresses, and routes.",
+      "description": "Show and configure network interfaces, addresses, and routes.",
+      "syntax": "ip [ OPTIONS ] OBJECT COMMAND",
+      "options": [
+        {
+          "flag": "addr",
+          "description": "Manage IP addresses."
+        },
+        {
+          "flag": "link",
+          "description": "Manage network interfaces."
+        },
+        {
+          "flag": "route",
+          "description": "Manage routing table."
+        },
+        {
+          "flag": "neigh",
+          "description": "Inspect neighbor/ARP table."
+        }
+      ],
+      "examples": [
+        {
+          "command": "ip addr show",
+          "description": "List interfaces and their IP addresses.",
+          "output": "2: enp0s3: <BROADCAST,MULTICAST,UP>\n    inet 192.0.2.10/24"
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "ss",
+        "nmcli",
+        "ifconfig"
+      ]
+    },
+    {
+      "name": "jobs",
+      "category": "Processes & Jobs",
+      "summary": "List active jobs in the current shell.",
+      "description": "List active jobs in the current shell.",
+      "syntax": "jobs [-lp] [JOBSPEC...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "jobs",
+          "description": "List active jobs in the current shell.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Bash and other job-control shells; shell builtin.",
+      "tags": [],
+      "related": [
+        "bg",
+        "fg"
+      ]
+    },
+    {
+      "name": "journalctl",
+      "category": "System & Diagnostics",
+      "summary": "Query the systemd journal.",
+      "description": "Query the systemd journal.",
+      "syntax": "journalctl [OPTIONS] [MATCHES]",
+      "options": [
+        {
+          "flag": "-b",
+          "description": "Show messages from the current boot."
+        },
+        {
+          "flag": "-u UNIT",
+          "description": "Filter by systemd unit."
+        },
+        {
+          "flag": "-f",
+          "description": "Follow new messages."
+        },
+        {
+          "flag": "-p PRIORITY",
+          "description": "Filter by priority."
+        }
+      ],
+      "examples": [
+        {
+          "command": "journalctl -u ssh --since today",
+          "description": "Show today’s journal entries for the SSH service.",
+          "output": "Nov 10 14:00:00 host sshd[123]: Server listening"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "systemd-based distributions.",
+      "tags": [],
+      "related": [
+        "systemctl",
+        "dmesg"
+      ]
+    },
+    {
+      "name": "kill",
+      "category": "Processes & Jobs",
+      "summary": "Send a signal to a process.",
+      "description": "Send a signal to a process.",
+      "syntax": "kill [-s SIGNAL | -SIGNAL] PID...",
+      "options": [
+        {
+          "flag": "-TERM",
+          "description": "Request graceful termination."
+        },
+        {
+          "flag": "-KILL",
+          "description": "Force termination; process cannot clean up."
+        },
+        {
+          "flag": "-l",
+          "description": "List signal names."
+        }
+      ],
+      "examples": [
+        {
+          "command": "kill",
+          "description": "Send a signal to a process.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "pkill",
+        "killall"
+      ]
+    },
+    {
+      "name": "killall",
+      "category": "Processes & Jobs",
+      "summary": "Send a signal to processes by executable name.",
+      "description": "Send a signal to processes by executable name.",
+      "syntax": "killall [OPTIONS] NAME...",
+      "options": [],
+      "examples": [
+        {
+          "command": "killall",
+          "description": "Send a signal to processes by executable name.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Implementation differs by platform; procps-ng behavior is common on Linux.",
+      "tags": [],
+      "related": [
+        "kill",
+        "pkill"
+      ]
+    },
+    {
+      "name": "less",
+      "category": "Text Processing",
+      "summary": "View text interactively with forward and backward navigation.",
+      "description": "View text interactively with forward and backward navigation.",
+      "syntax": "less [OPTION]... FILE...",
+      "options": [],
+      "examples": [
+        {
+          "command": "less",
+          "description": "View text interactively with forward and backward navigation.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "more",
+        "cat",
+        "tail"
+      ]
+    },
+    {
+      "name": "ln",
+      "category": "Files & Directories",
+      "summary": "Create hard links or symbolic links.",
+      "description": "Create hard links or symbolic links.",
+      "syntax": "ln [OPTION]... TARGET LINK_NAME",
+      "options": [
+        {
+          "flag": "-s",
+          "description": "Create a symbolic link."
+        },
+        {
+          "flag": "-f",
+          "description": "Remove existing destination before creating the link."
+        },
+        {
+          "flag": "-v",
+          "description": "Explain what is being done."
+        }
+      ],
+      "examples": [
+        {
+          "command": "ln",
+          "description": "Create hard links or symbolic links.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "readlink",
+        "realpath"
+      ]
+    },
+    {
+      "name": "locate",
+      "category": "Files & Directories",
+      "summary": "Find paths using a prebuilt filename database.",
+      "description": "Find paths using a prebuilt filename database.",
+      "syntax": "locate [OPTION]... PATTERN",
+      "options": [
+        {
+          "flag": "-i",
+          "description": "Ignore case."
+        },
+        {
+          "flag": "-c",
+          "description": "Print only the number of matches."
+        }
+      ],
+      "examples": [
+        {
+          "command": "locate",
+          "description": "Find paths using a prebuilt filename database.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Requires a locate implementation and an updated database, often provided by plocate or mlocate.",
+      "tags": [],
+      "related": [
+        "find",
+        "updatedb"
+      ]
+    },
+    {
+      "name": "ls",
+      "category": "Files & Directories",
+      "summary": "List directory contents.",
+      "description": "List directory contents.",
+      "syntax": "ls [OPTION]... [FILE]...",
+      "options": [
+        {
+          "flag": "-a, --all",
+          "description": "Include hidden entries."
+        },
+        {
+          "flag": "-l",
+          "description": "Use long listing format."
+        },
+        {
+          "flag": "-h, --human-readable",
+          "description": "Show human-readable sizes."
+        },
+        {
+          "flag": "-R, --recursive",
+          "description": "List subdirectories recursively."
+        },
+        {
+          "flag": "-t",
+          "description": "Sort by modification time."
+        }
+      ],
+      "examples": [
+        {
+          "command": "ls -lah /home",
+          "description": "Show all entries with details and readable sizes.",
+          "output": "drwxr-xr-x  8 lamer lamer 4.0K Nov 10 14:00 lamer\n-rw-r--r--  1 lamer lamer 1.2K Nov 10 13:50 notes.txt"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "find",
+        "stat",
+        "tree"
+      ]
+    },
+    {
+      "name": "lsblk",
+      "category": "Storage & Filesystems",
+      "summary": "List block devices and their relationships.",
+      "description": "List block devices and their relationships.",
+      "syntax": "lsblk [OPTIONS] [DEVICE...]",
+      "options": [
+        {
+          "flag": "-f",
+          "description": "Show filesystem information."
+        },
+        {
+          "flag": "-o LIST",
+          "description": "Choose output columns."
+        }
+      ],
+      "examples": [
+        {
+          "command": "lsblk",
+          "description": "List block devices and their relationships.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "blkid",
+        "fdisk",
+        "df"
+      ]
+    },
+    {
+      "name": "lsof",
+      "category": "Processes & Jobs",
+      "summary": "List open files and the processes using them.",
+      "description": "List open files and the processes using them.",
+      "syntax": "lsof [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "lsof",
+          "description": "List open files and the processes using them.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Optional package on some distributions.",
+      "tags": [],
+      "related": [
+        "fuser",
+        "ss"
+      ]
+    },
+    {
+      "name": "make",
+      "category": "Development & Version Control",
+      "summary": "Build targets according to a Makefile.",
+      "description": "Build targets according to a Makefile.",
+      "syntax": "make [OPTIONS] [TARGET...]",
+      "options": [
+        {
+          "flag": "-j N",
+          "description": "Run up to N jobs in parallel."
+        },
+        {
+          "flag": "-n",
+          "description": "Print commands without executing them."
+        },
+        {
+          "flag": "-C DIR",
+          "description": "Change directory before reading the Makefile."
+        }
+      ],
+      "examples": [
+        {
+          "command": "make",
+          "description": "Build targets according to a Makefile.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "cmake",
+        "ninja"
+      ]
+    },
+    {
+      "name": "man",
+      "category": "Help & Documentation",
+      "summary": "Read a command manual page.",
+      "description": "Read a command manual page.",
+      "syntax": "man [SECTION] PAGE",
+      "options": [
+        {
+          "flag": "-k KEYWORD",
+          "description": "Search manual-page descriptions."
+        },
+        {
+          "flag": "-f PAGE",
+          "description": "Show a short manual description."
+        }
+      ],
+      "examples": [
+        {
+          "command": "man ls",
+          "description": "Open the manual page for ls.",
+          "output": "Manual page viewer opens (for example, less)."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "info",
+        "apropos",
+        "whatis"
+      ]
+    },
+    {
+      "name": "md5sum",
+      "category": "Security & Checksums",
+      "summary": "Compute or verify MD5 checksums.",
+      "description": "Compute or verify MD5 checksums.",
+      "syntax": "md5sum [OPTION]... [FILE]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "md5sum",
+          "description": "Compute or verify MD5 checksums.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "MD5 is not suitable for security-sensitive integrity or authenticity decisions.",
+      "tags": [],
+      "related": [
+        "sha256sum"
+      ]
+    },
+    {
+      "name": "mkdir",
+      "category": "Files & Directories",
+      "summary": "Create directories.",
+      "description": "Create directories.",
+      "syntax": "mkdir [OPTION]... DIRECTORY...",
+      "options": [
+        {
+          "flag": "-p",
+          "description": "Create parent directories as needed."
+        },
+        {
+          "flag": "-m MODE",
+          "description": "Set permissions when creating the directory."
+        }
+      ],
+      "examples": [
+        {
+          "command": "mkdir -p projects/demo/src",
+          "description": "Create nested directories in one step.",
+          "output": "(no output)"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "rmdir",
+        "install"
+      ]
+    },
+    {
+      "name": "mkfs",
+      "category": "Storage & Filesystems",
+      "summary": "Create a filesystem on a device or partition.",
+      "description": "Create a filesystem on a device or partition.",
+      "syntax": "mkfs [OPTIONS] DEVICE",
+      "options": [],
+      "examples": [
+        {
+          "command": "mkfs",
+          "description": "Create a filesystem on a device or partition.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Filesystem-specific tools such as mkfs.ext4 are commonly used; formatting destroys existing filesystem data.",
+      "tags": [],
+      "related": [
+        "fsck",
+        "mount"
+      ]
+    },
+    {
+      "name": "more",
+      "category": "Text Processing",
+      "summary": "Page through text one screen at a time.",
+      "description": "Page through text one screen at a time.",
+      "syntax": "more [OPTION]... FILE...",
+      "options": [],
+      "examples": [
+        {
+          "command": "more",
+          "description": "Page through text one screen at a time.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "less",
+        "cat"
+      ]
+    },
+    {
+      "name": "mount",
+      "category": "Storage & Filesystems",
+      "summary": "Attach a filesystem to the directory tree.",
+      "description": "Attach a filesystem to the directory tree.",
+      "syntax": "mount [OPTIONS] DEVICE DIRECTORY",
+      "options": [],
+      "examples": [
+        {
+          "command": "mount",
+          "description": "Attach a filesystem to the directory tree.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Often requires root privileges; incorrect options can affect data access.",
+      "tags": [],
+      "related": [
+        "umount",
+        "findmnt"
+      ]
+    },
+    {
+      "name": "mv",
+      "category": "Files & Directories",
+      "summary": "Move or rename files and directories.",
+      "description": "Move or rename files and directories.",
+      "syntax": "mv [OPTION]... SOURCE DEST",
+      "options": [
+        {
+          "flag": "-i",
+          "description": "Prompt before overwriting."
+        },
+        {
+          "flag": "-n",
+          "description": "Do not overwrite an existing file."
+        },
+        {
+          "flag": "-v",
+          "description": "Explain what is being moved."
+        }
+      ],
+      "examples": [
+        {
+          "command": "mv",
+          "description": "Move or rename files and directories.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "cp",
+        "rename"
+      ]
+    },
+    {
+      "name": "nc",
+      "category": "Networking & Diagnostics",
+      "summary": "Read and write data across network connections.",
+      "description": "Read and write data across network connections.",
+      "syntax": "nc [OPTIONS] HOST PORT",
+      "options": [],
+      "examples": [
+        {
+          "command": "nc",
+          "description": "Read and write data across network connections.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Implementation varies (OpenBSD netcat, traditional netcat, Ncat).",
+      "tags": [],
+      "related": [
+        "socat",
+        "ss"
+      ]
+    },
+    {
+      "name": "netstat",
+      "category": "Networking",
+      "summary": "Display network connections, routing tables, and interface statistics.",
+      "description": "Display network connections, routing tables, and interface statistics.",
+      "syntax": "netstat [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "netstat",
+          "description": "Display network connections, routing tables, and interface statistics.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Legacy net-tools utility; ss is preferred on many modern Linux systems.",
+      "tags": [],
+      "related": [
+        "ss",
+        "ip"
+      ]
+    },
+    {
+      "name": "nice",
+      "category": "Processes & Jobs",
+      "summary": "Run a command with an adjusted scheduling priority.",
+      "description": "Run a command with an adjusted scheduling priority.",
+      "syntax": "nice [OPTION] [COMMAND [ARG]...]",
+      "options": [
+        {
+          "flag": "-n N",
+          "description": "Add a niceness adjustment."
+        }
+      ],
+      "examples": [
+        {
+          "command": "nice",
+          "description": "Run a command with an adjusted scheduling priority.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "renice",
+        "top"
+      ]
+    },
+    {
+      "name": "nmcli",
+      "category": "Networking",
+      "summary": "Control NetworkManager from the command line.",
+      "description": "Control NetworkManager from the command line.",
+      "syntax": "nmcli [OPTIONS] OBJECT COMMAND",
+      "options": [],
+      "examples": [
+        {
+          "command": "nmcli",
+          "description": "Control NetworkManager from the command line.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Requires NetworkManager.",
+      "tags": [],
+      "related": [
+        "ip",
+        "nmtui"
+      ]
+    },
+    {
+      "name": "nohup",
+      "category": "Processes & Jobs",
+      "summary": "Run a command immune to hangup signals.",
+      "description": "Run a command immune to hangup signals.",
+      "syntax": "nohup COMMAND [ARG]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "nohup",
+          "description": "Run a command immune to hangup signals.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "disown",
+        "systemd-run"
+      ]
+    },
+    {
+      "name": "nslookup",
+      "category": "Networking",
+      "summary": "Query DNS records.",
+      "description": "Query DNS records.",
+      "syntax": "nslookup [NAME] [SERVER]",
+      "options": [],
+      "examples": [
+        {
+          "command": "nslookup",
+          "description": "Query DNS records.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "dig",
+        "host"
+      ]
+    },
+    {
+      "name": "openssl",
+      "category": "Security & Keys",
+      "summary": "Work with cryptographic functions, certificates, and TLS.",
+      "description": "Work with cryptographic functions, certificates, and TLS.",
+      "syntax": "openssl COMMAND [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "openssl",
+          "description": "Work with cryptographic functions, certificates, and TLS.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "gpg",
+        "curl"
+      ]
+    },
+    {
+      "name": "pacman",
+      "category": "Package Management",
+      "summary": "Manage packages on Arch Linux systems.",
+      "description": "Manage packages on Arch Linux systems.",
+      "syntax": "pacman [OPTIONS] TARGETS",
+      "options": [
+        {
+          "flag": "-S PACKAGE",
+          "description": "Synchronize/install a package."
+        },
+        {
+          "flag": "-Syu",
+          "description": "Refresh databases and upgrade system."
+        },
+        {
+          "flag": "-R PACKAGE",
+          "description": "Remove a package."
+        },
+        {
+          "flag": "-Ss TERM",
+          "description": "Search repositories."
+        }
+      ],
+      "examples": [
+        {
+          "command": "pacman",
+          "description": "Manage packages on Arch Linux systems.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Arch Linux and derivatives.",
+      "tags": [],
+      "related": [
+        "yay"
+      ]
+    },
+    {
+      "name": "parted",
+      "category": "Storage & Filesystems",
+      "summary": "Create, inspect, and modify disk partitions.",
+      "description": "Create, inspect, and modify disk partitions.",
+      "syntax": "parted [OPTIONS] [DEVICE [COMMAND [PARAMETERS]...]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "parted",
+          "description": "Create, inspect, and modify disk partitions.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "fdisk",
+        "lsblk"
+      ]
+    },
+    {
+      "name": "passwd",
+      "category": "Permissions & Users",
+      "summary": "Change a user password.",
+      "description": "Change a user password.",
+      "syntax": "passwd [OPTIONS] [USER]",
+      "options": [],
+      "examples": [
+        {
+          "command": "passwd",
+          "description": "Change a user password.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Linux shadow-utils; policy depends on PAM and distribution.",
+      "tags": [],
+      "related": [
+        "useradd",
+        "usermod"
+      ]
+    },
+    {
+      "name": "paste",
+      "category": "Text Processing",
+      "summary": "Merge lines from files side by side.",
+      "description": "Merge lines from files side by side.",
+      "syntax": "paste [OPTION]... [FILE]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "paste",
+          "description": "Merge lines from files side by side.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "cut",
+        "join"
+      ]
+    },
+    {
+      "name": "pgrep",
+      "category": "Processes & Jobs",
+      "summary": "Find process IDs by name or other attributes.",
+      "description": "Find process IDs by name or other attributes.",
+      "syntax": "pgrep [OPTIONS] PATTERN",
+      "options": [
+        {
+          "flag": "-a",
+          "description": "List full command lines."
+        },
+        {
+          "flag": "-f",
+          "description": "Match against the full command line."
+        },
+        {
+          "flag": "-u USER",
+          "description": "Select processes by effective user."
+        }
+      ],
+      "examples": [
+        {
+          "command": "pgrep",
+          "description": "Find process IDs by name or other attributes.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "pkill",
+        "ps"
+      ]
+    },
+    {
+      "name": "ping",
+      "category": "Networking",
+      "summary": "Test reachability using ICMP echo requests.",
+      "description": "Test reachability using ICMP echo requests.",
+      "syntax": "ping [OPTIONS] DESTINATION",
+      "options": [
+        {
+          "flag": "-c COUNT",
+          "description": "Send a fixed number of probes."
+        },
+        {
+          "flag": "-i SECONDS",
+          "description": "Set the interval between probes."
+        },
+        {
+          "flag": "-4 / -6",
+          "description": "Use IPv4 or IPv6."
+        }
+      ],
+      "examples": [
+        {
+          "command": "ping -c 4 example.com",
+          "description": "Send four reachability probes.",
+          "output": "4 packets transmitted, 4 received, 0% packet loss"
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "traceroute",
+        "mtr"
+      ]
+    },
+    {
+      "name": "pkill",
+      "category": "Processes & Jobs",
+      "summary": "Send a signal to processes selected by pattern.",
+      "description": "Send a signal to processes selected by pattern.",
+      "syntax": "pkill [OPTIONS] PATTERN",
+      "options": [
+        {
+          "flag": "-TERM",
+          "description": "Choose a signal, such as TERM or KILL."
+        },
+        {
+          "flag": "-f",
+          "description": "Match the full command line."
+        }
+      ],
+      "examples": [
+        {
+          "command": "pkill",
+          "description": "Send a signal to processes selected by pattern.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "pgrep",
+        "kill"
+      ]
+    },
+    {
+      "name": "popd",
+      "category": "Shell & Navigation",
+      "summary": "Return to a directory saved on the directory stack.",
+      "description": "Return to a directory saved on the directory stack.",
+      "syntax": "popd",
+      "options": [],
+      "examples": [
+        {
+          "command": "popd",
+          "description": "Return to a directory saved on the directory stack.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Bash and other shells; shell builtin.",
+      "tags": [],
+      "related": [
+        "pushd",
+        "dirs"
+      ]
+    },
+    {
+      "name": "printenv",
+      "category": "System & Diagnostics",
+      "summary": "Print environment variables.",
+      "description": "Print environment variables.",
+      "syntax": "printenv [VARIABLE]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "printenv",
+          "description": "Print environment variables.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "env",
+        "export"
+      ]
+    },
+    {
+      "name": "printf",
+      "category": "Shell & Text",
+      "summary": "Format and print data.",
+      "description": "Format and print data.",
+      "syntax": "printf FORMAT [ARGUMENT]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "printf",
+          "description": "Format and print data.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Shell builtin and external utility; formatting details may vary.",
+      "tags": [],
+      "related": [
+        "echo",
+        "awk"
+      ]
+    },
+    {
+      "name": "ps",
+      "category": "Processes & Jobs",
+      "summary": "Report running processes.",
+      "description": "Report running processes.",
+      "syntax": "ps [OPTIONS]",
+      "options": [
+        {
+          "flag": "-ef",
+          "description": "Show all processes in full format (common Unix form)."
+        },
+        {
+          "flag": "aux",
+          "description": "BSD-style detailed process listing."
+        },
+        {
+          "flag": "-p PID",
+          "description": "Select a process by PID."
+        }
+      ],
+      "examples": [
+        {
+          "command": "ps aux",
+          "description": "Show a detailed snapshot of processes.",
+          "output": "USER PID %CPU %MEM COMMAND\nroot 1 0.0 0.1 /sbin/init"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "top",
+        "pgrep",
+        "kill"
+      ]
+    },
+    {
+      "name": "pushd",
+      "category": "Shell & Navigation",
+      "summary": "Save the current directory and change to another directory.",
+      "description": "Save the current directory and change to another directory.",
+      "syntax": "pushd [DIRECTORY]",
+      "options": [],
+      "examples": [
+        {
+          "command": "pushd",
+          "description": "Save the current directory and change to another directory.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Bash and other shells; shell builtin.",
+      "tags": [],
+      "related": [
+        "popd",
+        "dirs"
+      ]
+    },
+    {
+      "name": "pwd",
+      "category": "Shell & Navigation",
+      "summary": "Print the current working directory.",
+      "description": "Print the current working directory.",
+      "syntax": "pwd [-L | -P]",
+      "options": [
+        {
+          "flag": "-L",
+          "description": "Show the logical path, including symbolic links."
+        },
+        {
+          "flag": "-P",
+          "description": "Resolve symbolic links and show the physical path."
+        }
+      ],
+      "examples": [
+        {
+          "command": "pwd",
+          "description": "Show the current directory.",
+          "output": "/home/lamer/projects"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "cd",
+        "ls"
+      ]
+    },
+    {
+      "name": "readlink",
+      "category": "Files & Directories",
+      "summary": "Resolve or print symbolic-link information.",
+      "description": "Resolve or print symbolic-link information.",
+      "syntax": "readlink [OPTION]... FILE",
+      "options": [
+        {
+          "flag": "-f",
+          "description": "Canonicalize by resolving every symlink component."
+        },
+        {
+          "flag": "-e",
+          "description": "Require all path components to exist."
+        }
+      ],
+      "examples": [
+        {
+          "command": "readlink",
+          "description": "Resolve or print symbolic-link information.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "ln",
+        "realpath"
+      ]
+    },
+    {
+      "name": "realpath",
+      "category": "Files & Directories",
+      "summary": "Print the canonical absolute path.",
+      "description": "Print the canonical absolute path.",
+      "syntax": "realpath [OPTION]... FILE...",
+      "options": [],
+      "examples": [
+        {
+          "command": "realpath",
+          "description": "Print the canonical absolute path.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "readlink",
+        "pwd"
+      ]
+    },
+    {
+      "name": "renice",
+      "category": "Processes & Jobs",
+      "summary": "Change the scheduling priority of running processes.",
+      "description": "Change the scheduling priority of running processes.",
+      "syntax": "renice PRIORITY [OPTIONS] ID...",
+      "options": [],
+      "examples": [
+        {
+          "command": "renice",
+          "description": "Change the scheduling priority of running processes.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "nice",
+        "top"
+      ]
+    },
+    {
+      "name": "reset",
+      "category": "Shell & Navigation",
+      "summary": "Reinitialize terminal settings and display.",
+      "description": "Reinitialize terminal settings and display.",
+      "syntax": "reset [TERMINAL]",
+      "options": [],
+      "examples": [
+        {
+          "command": "reset",
+          "description": "Reinitialize terminal settings and display.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "clear",
+        "stty"
+      ]
+    },
+    {
+      "name": "resolvectl",
+      "category": "Networking",
+      "summary": "Inspect and control the systemd-resolved DNS resolver.",
+      "description": "Inspect and control the systemd-resolved DNS resolver.",
+      "syntax": "resolvectl [OPTIONS] COMMAND",
+      "options": [],
+      "examples": [
+        {
+          "command": "resolvectl",
+          "description": "Inspect and control the systemd-resolved DNS resolver.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "systemd-resolved systems.",
+      "tags": [],
+      "related": [
+        "dig",
+        "nmcli"
+      ]
+    },
+    {
+      "name": "rg",
+      "category": "Text Processing",
+      "summary": "Search files quickly using ripgrep.",
+      "description": "Search files quickly using ripgrep.",
+      "syntax": "rg [OPTIONS] PATTERN [PATH ...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "rg",
+          "description": "Search files quickly using ripgrep.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Optional ripgrep package; respects ignore files by default.",
+      "tags": [],
+      "related": [
+        "grep",
+        "find"
+      ]
+    },
+    {
+      "name": "rm",
+      "category": "Files & Directories",
+      "summary": "Remove files or directory trees.",
+      "description": "Remove files or directory trees.",
+      "syntax": "rm [OPTION]... FILE...",
+      "options": [
+        {
+          "flag": "-i",
+          "description": "Prompt before every removal."
+        },
+        {
+          "flag": "-r, -R",
+          "description": "Remove directories recursively."
+        },
+        {
+          "flag": "-f",
+          "description": "Ignore nonexistent files and never prompt."
+        },
+        {
+          "flag": "-v",
+          "description": "Explain what is being removed."
+        }
+      ],
+      "examples": [
+        {
+          "command": "rm",
+          "description": "Remove files or directory trees.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "GNU coreutils and compatible implementations. Deletion is generally not reversible.",
+      "tags": [],
+      "related": [
+        "rmdir",
+        "shred"
+      ]
+    },
+    {
+      "name": "rmdir",
+      "category": "Files & Directories",
+      "summary": "Remove empty directories.",
+      "description": "Remove empty directories.",
+      "syntax": "rmdir [OPTION]... DIRECTORY...",
+      "options": [
+        {
+          "flag": "-p",
+          "description": "Remove parent directories if they become empty."
+        }
+      ],
+      "examples": [
+        {
+          "command": "rmdir",
+          "description": "Remove empty directories.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "rm",
+        "mkdir"
+      ]
+    },
+    {
+      "name": "rpm",
+      "category": "Package Management",
+      "summary": "Query and manage RPM package files and databases.",
+      "description": "Query and manage RPM package files and databases.",
+      "syntax": "rpm [OPTIONS]",
+      "options": [
+        {
+          "flag": "-q PACKAGE",
+          "description": "Query an installed package."
+        },
+        {
+          "flag": "-i FILE.rpm",
+          "description": "Install a package file."
+        },
+        {
+          "flag": "-U FILE.rpm",
+          "description": "Upgrade or install a package."
+        }
+      ],
+      "examples": [
+        {
+          "command": "rpm",
+          "description": "Query and manage RPM package files and databases.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "RPM-based distributions.",
+      "tags": [],
+      "related": [
+        "dnf",
+        "zypper"
+      ]
+    },
+    {
+      "name": "rsync",
+      "category": "Files & Transfers",
+      "summary": "Synchronize files and directories locally or over a remote shell.",
+      "description": "Synchronize files and directories locally or over a remote shell.",
+      "syntax": "rsync [OPTIONS] SOURCE... DEST",
+      "options": [
+        {
+          "flag": "-a",
+          "description": "Archive mode."
+        },
+        {
+          "flag": "-v",
+          "description": "Verbose output."
+        },
+        {
+          "flag": "--dry-run",
+          "description": "Show what would happen without changing files."
+        },
+        {
+          "flag": "--delete",
+          "description": "Delete destination files not present at source; use extreme care."
+        }
+      ],
+      "examples": [
+        {
+          "command": "rsync -av --dry-run source/ backup/",
+          "description": "Preview a directory synchronization.",
+          "output": "sending incremental file list\n..."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Optional package; available on many Linux distributions.",
+      "tags": [],
+      "related": [
+        "cp",
+        "scp"
+      ]
+    },
+    {
+      "name": "scp",
+      "category": "Networking & Remote Access",
+      "summary": "Copy files securely between hosts.",
+      "description": "Copy files securely between hosts.",
+      "syntax": "scp [OPTIONS] SOURCE... TARGET",
+      "options": [
+        {
+          "flag": "-P PORT",
+          "description": "Use a specified SSH port."
+        },
+        {
+          "flag": "-r",
+          "description": "Copy directories recursively."
+        },
+        {
+          "flag": "-i FILE",
+          "description": "Use a private key file."
+        }
+      ],
+      "examples": [
+        {
+          "command": "scp",
+          "description": "Copy files securely between hosts.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "ssh",
+        "rsync",
+        "sftp"
+      ]
+    },
+    {
+      "name": "sed",
+      "category": "Text Processing",
+      "summary": "Stream editor for filtering and transforming text.",
+      "description": "Stream editor for filtering and transforming text.",
+      "syntax": "sed [OPTION]... SCRIPT [FILE]...",
+      "options": [
+        {
+          "flag": "-n",
+          "description": "Suppress automatic printing."
+        },
+        {
+          "flag": "-e SCRIPT",
+          "description": "Add a script."
+        },
+        {
+          "flag": "-i[SUFFIX]",
+          "description": "Edit files in place; use caution."
+        }
+      ],
+      "examples": [
+        {
+          "command": "sed -n '1,20p' notes.txt",
+          "description": "Print lines 1 through 20.",
+          "output": "(the first twenty lines of notes.txt)"
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "awk",
+        "grep"
+      ]
+    },
+    {
+      "name": "service",
+      "category": "System & Services",
+      "summary": "Run a service management script.",
+      "description": "Run a service management script.",
+      "syntax": "service SERVICE COMMAND",
+      "options": [],
+      "examples": [
+        {
+          "command": "service",
+          "description": "Run a service management script.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Compatibility wrapper on many systemd distributions; legacy init systems use it directly.",
+      "tags": [],
+      "related": [
+        "systemctl"
+      ]
+    },
+    {
+      "name": "setfacl",
+      "category": "Permissions & Users",
+      "summary": "Modify file access-control lists.",
+      "description": "Modify file access-control lists.",
+      "syntax": "setfacl [OPTION]... ACL FILE...",
+      "options": [
+        {
+          "flag": "-m",
+          "description": "Modify ACL entries."
+        },
+        {
+          "flag": "-x",
+          "description": "Remove ACL entries."
+        },
+        {
+          "flag": "-R",
+          "description": "Apply recursively."
+        }
+      ],
+      "examples": [
+        {
+          "command": "setfacl",
+          "description": "Modify file access-control lists.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Requires ACL utilities and filesystem ACL support.",
+      "tags": [],
+      "related": [
+        "getfacl",
+        "chmod"
+      ]
+    },
+    {
+      "name": "sftp",
+      "category": "Networking & Remote Access",
+      "summary": "Transfer files through an interactive SSH file-transfer session.",
+      "description": "Transfer files through an interactive SSH file-transfer session.",
+      "syntax": "sftp [OPTIONS] [USER@]HOST",
+      "options": [],
+      "examples": [
+        {
+          "command": "sftp",
+          "description": "Transfer files through an interactive SSH file-transfer session.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "scp",
+        "ssh"
+      ]
+    },
+    {
+      "name": "sh",
+      "category": "Shell & Scripting",
+      "summary": "Start the system’s POSIX-style shell.",
+      "description": "Start the system’s POSIX-style shell.",
+      "syntax": "sh [OPTIONS] [SCRIPT [ARGUMENTS...]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "sh",
+          "description": "Start the system’s POSIX-style shell.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Often provided by dash or linked to another shell; implementation varies.",
+      "tags": [],
+      "related": [
+        "bash",
+        "dash"
+      ]
+    },
+    {
+      "name": "sha256sum",
+      "category": "Security & Checksums",
+      "summary": "Compute or verify SHA-256 checksums.",
+      "description": "Compute or verify SHA-256 checksums.",
+      "syntax": "sha256sum [OPTION]... [FILE]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "sha256sum",
+          "description": "Compute or verify SHA-256 checksums.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "md5sum",
+        "sha512sum"
+      ]
+    },
+    {
+      "name": "shred",
+      "category": "Storage & Filesystems",
+      "summary": "Overwrite files to make recovery more difficult.",
+      "description": "Overwrite files to make recovery more difficult.",
+      "syntax": "shred [OPTIONS] FILE...",
+      "options": [
+        {
+          "flag": "-n N",
+          "description": "Overwrite N times."
+        },
+        {
+          "flag": "-u",
+          "description": "Remove the file after overwriting."
+        }
+      ],
+      "examples": [
+        {
+          "command": "shred",
+          "description": "Overwrite files to make recovery more difficult.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Not reliable for all storage technologies, copy-on-write filesystems, SSDs, or backups.",
+      "tags": [],
+      "related": [
+        "rm",
+        "dd"
+      ]
+    },
+    {
+      "name": "sleep",
+      "category": "Processes & Jobs",
+      "summary": "Pause for a specified amount of time.",
+      "description": "Pause for a specified amount of time.",
+      "syntax": "sleep NUMBER[SUFFIX]",
+      "options": [],
+      "examples": [
+        {
+          "command": "sleep",
+          "description": "Pause for a specified amount of time.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "watch",
+        "timeout"
+      ]
+    },
+    {
+      "name": "sort",
+      "category": "Text Processing",
+      "summary": "Sort lines of text.",
+      "description": "Sort lines of text.",
+      "syntax": "sort [OPTION]... [FILE]...",
+      "options": [
+        {
+          "flag": "-n",
+          "description": "Sort numerically."
+        },
+        {
+          "flag": "-r",
+          "description": "Reverse the result."
+        },
+        {
+          "flag": "-u",
+          "description": "Output only unique lines."
+        },
+        {
+          "flag": "-k KEYDEF",
+          "description": "Sort by selected fields."
+        }
+      ],
+      "examples": [
+        {
+          "command": "sort",
+          "description": "Sort lines of text.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "uniq",
+        "comm"
+      ]
+    },
+    {
+      "name": "source",
+      "category": "Shell & Scripting",
+      "summary": "Read and execute a file in the current shell.",
+      "description": "Read and execute a file in the current shell.",
+      "syntax": "source FILE [ARGUMENTS...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "source",
+          "description": "Read and execute a file in the current shell.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Bash/Zsh builtin; POSIX name is the dot command: . FILE.",
+      "tags": [],
+      "related": [
+        ".",
+        "bash"
+      ]
+    },
+    {
+      "name": "ss",
+      "category": "Networking",
+      "summary": "Inspect sockets and listening network endpoints.",
+      "description": "Inspect sockets and listening network endpoints.",
+      "syntax": "ss [OPTIONS]",
+      "options": [
+        {
+          "flag": "-t",
+          "description": "Show TCP sockets."
+        },
+        {
+          "flag": "-u",
+          "description": "Show UDP sockets."
+        },
+        {
+          "flag": "-l",
+          "description": "Show listening sockets."
+        },
+        {
+          "flag": "-p",
+          "description": "Show process information."
+        },
+        {
+          "flag": "-n",
+          "description": "Do not resolve names."
+        }
+      ],
+      "examples": [
+        {
+          "command": "ss -tuln",
+          "description": "List listening TCP and UDP sockets numerically.",
+          "output": "Netid State  Local Address:Port\ntcp   LISTEN 0.0.0.0:22"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "netstat",
+        "lsof"
+      ]
+    },
+    {
+      "name": "ssh",
+      "category": "Networking & Remote Access",
+      "summary": "Connect securely to a remote system.",
+      "description": "Connect securely to a remote system.",
+      "syntax": "ssh [OPTIONS] [USER@]HOST",
+      "options": [
+        {
+          "flag": "-p PORT",
+          "description": "Connect to a specified port."
+        },
+        {
+          "flag": "-i FILE",
+          "description": "Use a private key file."
+        },
+        {
+          "flag": "-v",
+          "description": "Verbose connection diagnostics."
+        }
+      ],
+      "examples": [
+        {
+          "command": "ssh user@server.example",
+          "description": "Open a remote login session.",
+          "output": "The remote host presents its login banner and shell."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "scp",
+        "sftp",
+        "ssh-keygen"
+      ]
+    },
+    {
+      "name": "ssh-keygen",
+      "category": "Security & Keys",
+      "summary": "Generate, manage, and convert SSH authentication keys.",
+      "description": "Generate, manage, and convert SSH authentication keys.",
+      "syntax": "ssh-keygen [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "ssh-keygen",
+          "description": "Generate, manage, and convert SSH authentication keys.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "ssh",
+        "ssh-add"
+      ]
+    },
+    {
+      "name": "stat",
+      "category": "Files & Directories",
+      "summary": "Display file or filesystem status.",
+      "description": "Display file or filesystem status.",
+      "syntax": "stat [OPTION]... FILE...",
+      "options": [
+        {
+          "flag": "-c FORMAT",
+          "description": "Format the output."
+        },
+        {
+          "flag": "-f",
+          "description": "Display filesystem status instead of file status."
+        }
+      ],
+      "examples": [
+        {
+          "command": "stat",
+          "description": "Display file or filesystem status.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "file",
+        "ls"
+      ]
+    },
+    {
+      "name": "strace",
+      "category": "Processes & Jobs",
+      "summary": "Trace system calls and signals.",
+      "description": "Trace system calls and signals.",
+      "syntax": "strace [OPTIONS] COMMAND [ARGS...]",
+      "options": [
+        {
+          "flag": "-p PID",
+          "description": "Attach to a running process."
+        },
+        {
+          "flag": "-o FILE",
+          "description": "Write trace output to a file."
+        },
+        {
+          "flag": "-f",
+          "description": "Follow child processes."
+        }
+      ],
+      "examples": [
+        {
+          "command": "strace",
+          "description": "Trace system calls and signals.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Debugging utility; tracing may expose sensitive process data.",
+      "tags": [],
+      "related": [
+        "ltrace",
+        "gdb"
+      ]
+    },
+    {
+      "name": "su",
+      "category": "Permissions & Users",
+      "summary": "Switch user or start a login shell.",
+      "description": "Switch user or start a login shell.",
+      "syntax": "su [OPTIONS] [USER]",
+      "options": [
+        {
+          "flag": "-",
+          "description": "Start a login shell."
+        },
+        {
+          "flag": "-c COMMAND",
+          "description": "Run a command as the target user."
+        }
+      ],
+      "examples": [
+        {
+          "command": "su",
+          "description": "Switch user or start a login shell.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "sudo",
+        "whoami"
+      ]
+    },
+    {
+      "name": "sudo",
+      "category": "Permissions & Users",
+      "summary": "Run a command with elevated privileges.",
+      "description": "Run a command with elevated privileges.",
+      "syntax": "sudo [OPTIONS] COMMAND",
+      "options": [
+        {
+          "flag": "-l",
+          "description": "List allowed commands."
+        },
+        {
+          "flag": "-u USER",
+          "description": "Run as another user."
+        },
+        {
+          "flag": "-k",
+          "description": "Invalidate cached credentials."
+        }
+      ],
+      "examples": [
+        {
+          "command": "sudo apt update",
+          "description": "Run the package-index update with administrative privileges.",
+          "output": "Package index download status varies by system."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Requires sudo configuration; use only for commands you understand.",
+      "tags": [],
+      "related": [
+        "su",
+        "visudo"
+      ]
+    },
+    {
+      "name": "sync",
+      "category": "Storage & Filesystems",
+      "summary": "Flush filesystem buffers to storage.",
+      "description": "Flush filesystem buffers to storage.",
+      "syntax": "sync [OPTIONS] [FILE...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "sync",
+          "description": "Flush filesystem buffers to storage.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "mount",
+        "umount"
+      ]
+    },
+    {
+      "name": "systemctl",
+      "category": "System & Services",
+      "summary": "Inspect and manage systemd services and units.",
+      "description": "Inspect and manage systemd services and units.",
+      "syntax": "systemctl [OPTIONS] COMMAND [UNIT...]",
+      "options": [
+        {
+          "flag": "status UNIT",
+          "description": "Show unit status."
+        },
+        {
+          "flag": "start UNIT",
+          "description": "Start a unit."
+        },
+        {
+          "flag": "stop UNIT",
+          "description": "Stop a unit."
+        },
+        {
+          "flag": "enable UNIT",
+          "description": "Enable a unit at boot."
+        },
+        {
+          "flag": "disable UNIT",
+          "description": "Disable a unit at boot."
+        }
+      ],
+      "examples": [
+        {
+          "command": "systemctl status ssh",
+          "description": "Inspect the SSH service status.",
+          "output": "● ssh.service - OpenBSD Secure Shell server\n   Active: active (running)"
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "systemd-based distributions; administrative privileges may be required.",
+      "tags": [],
+      "related": [
+        "journalctl",
+        "service"
+      ]
+    },
+    {
+      "name": "tail",
+      "category": "Text Processing",
+      "summary": "Print the last lines of files and optionally follow updates.",
+      "description": "Print the last lines of files and optionally follow updates.",
+      "syntax": "tail [OPTION]... [FILE]...",
+      "options": [
+        {
+          "flag": "-n N",
+          "description": "Print the last N lines."
+        },
+        {
+          "flag": "-f",
+          "description": "Follow appended data."
+        },
+        {
+          "flag": "-F",
+          "description": "Follow by filename and retry if replaced."
+        }
+      ],
+      "examples": [
+        {
+          "command": "tail -f /var/log/syslog",
+          "description": "Follow new lines in a log file.",
+          "output": "Nov 10 14:00:01 host service[123]: started"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "head",
+        "journalctl"
+      ]
+    },
+    {
+      "name": "tar",
+      "category": "Archives & Compression",
+      "summary": "Create, list, or extract tar archives.",
+      "description": "Create, list, or extract tar archives.",
+      "syntax": "tar [OPTIONS] [ARCHIVE] [FILE...]",
+      "options": [
+        {
+          "flag": "-c",
+          "description": "Create an archive."
+        },
+        {
+          "flag": "-x",
+          "description": "Extract an archive."
+        },
+        {
+          "flag": "-t",
+          "description": "List archive contents."
+        },
+        {
+          "flag": "-f FILE",
+          "description": "Use archive file."
+        },
+        {
+          "flag": "-z",
+          "description": "Filter through gzip."
+        },
+        {
+          "flag": "-v",
+          "description": "Show processed files."
+        }
+      ],
+      "examples": [
+        {
+          "command": "tar -czf backup.tar.gz Documents/",
+          "description": "Create a gzip-compressed archive of Documents.",
+          "output": "(no output unless verbose mode is selected)"
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "gzip",
+        "zip",
+        "rsync"
+      ]
+    },
+    {
+      "name": "tcpdump",
+      "category": "Networking & Diagnostics",
+      "summary": "Capture and inspect network packets.",
+      "description": "Capture and inspect network packets.",
+      "syntax": "tcpdump [OPTIONS] [EXPRESSION]",
+      "options": [
+        {
+          "flag": "-i IFACE",
+          "description": "Capture on an interface."
+        },
+        {
+          "flag": "-nn",
+          "description": "Do not resolve addresses or ports."
+        },
+        {
+          "flag": "-w FILE",
+          "description": "Write packets to a capture file."
+        },
+        {
+          "flag": "-r FILE",
+          "description": "Read a capture file."
+        }
+      ],
+      "examples": [
+        {
+          "command": "tcpdump",
+          "description": "Capture and inspect network packets.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Often requires elevated privileges; captures may contain sensitive information.",
+      "tags": [],
+      "related": [
+        "wireshark",
+        "ss"
+      ]
+    },
+    {
+      "name": "tee",
+      "category": "Text Processing",
+      "summary": "Copy standard input to files and standard output.",
+      "description": "Copy standard input to files and standard output.",
+      "syntax": "tee [OPTION]... [FILE]...",
+      "options": [
+        {
+          "flag": "-a",
+          "description": "Append to files instead of overwriting."
+        },
+        {
+          "flag": "-i",
+          "description": "Ignore interrupt signals."
+        }
+      ],
+      "examples": [
+        {
+          "command": "printf \"hello\\n\" | tee greeting.txt",
+          "description": "Display text and write it to greeting.txt.",
+          "output": "hello"
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "cat",
+        "xargs"
+      ]
+    },
+    {
+      "name": "timedatectl",
+      "category": "System & Diagnostics",
+      "summary": "Inspect or change time, date, and time synchronization settings.",
+      "description": "Inspect or change time, date, and time synchronization settings.",
+      "syntax": "timedatectl [OPTIONS] COMMAND",
+      "options": [],
+      "examples": [
+        {
+          "command": "timedatectl",
+          "description": "Inspect or change time, date, and time synchronization settings.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "systemd-based distributions.",
+      "tags": [],
+      "related": [
+        "date",
+        "chronyc"
+      ]
+    },
+    {
+      "name": "timeout",
+      "category": "Processes & Jobs",
+      "summary": "Run a command with a time limit.",
+      "description": "Run a command with a time limit.",
+      "syntax": "timeout [OPTIONS] DURATION COMMAND [ARG]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "timeout",
+          "description": "Run a command with a time limit.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "sleep",
+        "kill"
+      ]
+    },
+    {
+      "name": "top",
+      "category": "Processes & Jobs",
+      "summary": "Display live process and system resource information.",
+      "description": "Display live process and system resource information.",
+      "syntax": "top [OPTIONS]",
+      "options": [
+        {
+          "flag": "-p PID",
+          "description": "Monitor selected process IDs."
+        },
+        {
+          "flag": "-u USER",
+          "description": "Show processes for a user."
+        }
+      ],
+      "examples": [
+        {
+          "command": "top",
+          "description": "Display live process and system resource information.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "htop",
+        "ps",
+        "free"
+      ]
+    },
+    {
+      "name": "touch",
+      "category": "Files & Directories",
+      "summary": "Create empty files or update timestamps.",
+      "description": "Create empty files or update timestamps.",
+      "syntax": "touch [OPTION]... FILE...",
+      "options": [
+        {
+          "flag": "-a",
+          "description": "Change access time only."
+        },
+        {
+          "flag": "-m",
+          "description": "Change modification time only."
+        },
+        {
+          "flag": "-c",
+          "description": "Do not create missing files."
+        }
+      ],
+      "examples": [
+        {
+          "command": "touch todo.txt",
+          "description": "Create todo.txt if it does not exist.",
+          "output": "(no output)"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "stat",
+        "mkdir"
+      ]
+    },
+    {
+      "name": "tr",
+      "category": "Text Processing",
+      "summary": "Translate or delete characters from standard input.",
+      "description": "Translate or delete characters from standard input.",
+      "syntax": "tr [OPTION]... SET1 [SET2]",
+      "options": [
+        {
+          "flag": "-d",
+          "description": "Delete characters in SET1."
+        },
+        {
+          "flag": "-s",
+          "description": "Squeeze repeated characters."
+        }
+      ],
+      "examples": [
+        {
+          "command": "tr",
+          "description": "Translate or delete characters from standard input.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "sed",
+        "iconv"
+      ]
+    },
+    {
+      "name": "tracepath",
+      "category": "Networking",
+      "summary": "Trace path MTU and route information to a destination.",
+      "description": "Trace path MTU and route information to a destination.",
+      "syntax": "tracepath [OPTIONS] DESTINATION",
+      "options": [],
+      "examples": [
+        {
+          "command": "tracepath",
+          "description": "Trace path MTU and route information to a destination.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "traceroute",
+        "ping"
+      ]
+    },
+    {
+      "name": "traceroute",
+      "category": "Networking",
+      "summary": "Trace the route packets take to a destination.",
+      "description": "Trace the route packets take to a destination.",
+      "syntax": "traceroute [OPTIONS] HOST",
+      "options": [],
+      "examples": [
+        {
+          "command": "traceroute",
+          "description": "Trace the route packets take to a destination.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "May require installation and network permissions; results depend on firewall behavior.",
+      "tags": [],
+      "related": [
+        "tracepath",
+        "ping"
+      ]
+    },
+    {
+      "name": "tree",
+      "category": "Files & Directories",
+      "summary": "Display directories as a tree.",
+      "description": "Display directories as a tree.",
+      "syntax": "tree [OPTION]... [DIRECTORY]",
+      "options": [
+        {
+          "flag": "-L N",
+          "description": "Limit display depth to N levels."
+        },
+        {
+          "flag": "-a",
+          "description": "Include hidden files."
+        },
+        {
+          "flag": "-d",
+          "description": "Show directories only."
+        }
+      ],
+      "examples": [
+        {
+          "command": "tree",
+          "description": "Display directories as a tree.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Usually provided by the optional tree package.",
+      "tags": [],
+      "related": [
+        "ls",
+        "find"
+      ]
+    },
+    {
+      "name": "type",
+      "category": "Shell & Navigation",
+      "summary": "Describe how the shell interprets a command name.",
+      "description": "Describe how the shell interprets a command name.",
+      "syntax": "type [-afptP] NAME...",
+      "options": [],
+      "examples": [
+        {
+          "command": "type",
+          "description": "Describe how the shell interprets a command name.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Bash and other shells; shell builtin.",
+      "tags": [],
+      "related": [
+        "command",
+        "which"
+      ]
+    },
+    {
+      "name": "ufw",
+      "category": "Networking & Security",
+      "summary": "Manage the uncomplicated firewall.",
+      "description": "Manage the uncomplicated firewall.",
+      "syntax": "ufw [OPTIONS] COMMAND",
+      "options": [
+        {
+          "flag": "status",
+          "description": "Show firewall status."
+        },
+        {
+          "flag": "allow PORT",
+          "description": "Allow traffic on a port."
+        },
+        {
+          "flag": "deny PORT",
+          "description": "Deny traffic on a port."
+        },
+        {
+          "flag": "enable / disable",
+          "description": "Enable or disable the firewall."
+        }
+      ],
+      "examples": [
+        {
+          "command": "ufw",
+          "description": "Manage the uncomplicated firewall.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Ubuntu-oriented frontend; may not be installed or used on other distributions.",
+      "tags": [],
+      "related": [
+        "firewall-cmd",
+        "nft"
+      ]
+    },
+    {
+      "name": "umask",
+      "category": "Permissions & Users",
+      "summary": "Set or display the file-creation permission mask.",
+      "description": "Set or display the file-creation permission mask.",
+      "syntax": "umask [-p] [-S] [MODE]",
+      "options": [],
+      "examples": [
+        {
+          "command": "umask",
+          "description": "Set or display the file-creation permission mask.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Shell builtin; affects subsequently created files and directories.",
+      "tags": [],
+      "related": [
+        "chmod"
+      ]
+    },
+    {
+      "name": "umount",
+      "category": "Storage & Filesystems",
+      "summary": "Detach a mounted filesystem.",
+      "description": "Detach a mounted filesystem.",
+      "syntax": "umount [OPTIONS] {DEVICE|DIRECTORY}",
+      "options": [],
+      "examples": [
+        {
+          "command": "umount",
+          "description": "Detach a mounted filesystem.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "mount",
+        "findmnt"
+      ]
+    },
+    {
+      "name": "unalias",
+      "category": "Shell & Environment",
+      "summary": "Remove aliases.",
+      "description": "Remove aliases.",
+      "syntax": "unalias [-a] NAME...",
+      "options": [],
+      "examples": [
+        {
+          "command": "unalias",
+          "description": "Remove aliases.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Shell builtin.",
+      "tags": [],
+      "related": [
+        "alias"
+      ]
+    },
+    {
+      "name": "uname",
+      "category": "System & Diagnostics",
+      "summary": "Print kernel and system information.",
+      "description": "Print kernel and system information.",
+      "syntax": "uname [OPTION]...",
+      "options": [
+        {
+          "flag": "-a",
+          "description": "Print all available system information."
+        },
+        {
+          "flag": "-r",
+          "description": "Print kernel release."
+        },
+        {
+          "flag": "-m",
+          "description": "Print machine hardware name."
+        }
+      ],
+      "examples": [
+        {
+          "command": "uname -a",
+          "description": "Display the kernel, host, architecture, and other details.",
+          "output": "Linux host 6.x.x ... x86_64 GNU/Linux"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "hostnamectl",
+        "lsb_release"
+      ]
+    },
+    {
+      "name": "uniq",
+      "category": "Text Processing",
+      "summary": "Report or filter adjacent repeated lines.",
+      "description": "Report or filter adjacent repeated lines.",
+      "syntax": "uniq [OPTION]... [INPUT [OUTPUT]]",
+      "options": [
+        {
+          "flag": "-c",
+          "description": "Prefix lines with occurrence counts."
+        },
+        {
+          "flag": "-d",
+          "description": "Print only duplicate lines."
+        },
+        {
+          "flag": "-u",
+          "description": "Print only unique lines."
+        }
+      ],
+      "examples": [
+        {
+          "command": "uniq",
+          "description": "Report or filter adjacent repeated lines.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Input generally needs sorting first for non-adjacent duplicates.",
+      "tags": [],
+      "related": [
+        "sort",
+        "comm"
+      ]
+    },
+    {
+      "name": "unset",
+      "category": "Shell & Environment",
+      "summary": "Remove shell variables or functions.",
+      "description": "Remove shell variables or functions.",
+      "syntax": "unset [-fv] NAME...",
+      "options": [],
+      "examples": [
+        {
+          "command": "unset",
+          "description": "Remove shell variables or functions.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Shell builtin.",
+      "tags": [],
+      "related": [
+        "export",
+        "set"
+      ]
+    },
+    {
+      "name": "unzip",
+      "category": "Archives & Compression",
+      "summary": "List, test, or extract ZIP archives.",
+      "description": "List, test, or extract ZIP archives.",
+      "syntax": "unzip [OPTIONS] ARCHIVE [FILE...]",
+      "options": [
+        {
+          "flag": "-l",
+          "description": "List archive contents."
+        },
+        {
+          "flag": "-t",
+          "description": "Test archive integrity."
+        },
+        {
+          "flag": "-d DIR",
+          "description": "Extract into DIR."
+        }
+      ],
+      "examples": [
+        {
+          "command": "unzip",
+          "description": "List, test, or extract ZIP archives.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "zip",
+        "tar"
+      ]
+    },
+    {
+      "name": "uptime",
+      "category": "System & Diagnostics",
+      "summary": "Show how long the system has been running and load averages.",
+      "description": "Show how long the system has been running and load averages.",
+      "syntax": "uptime [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "uptime",
+          "description": "Show how long the system has been running and load averages.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "w",
+        "top"
+      ]
+    },
+    {
+      "name": "useradd",
+      "category": "Permissions & Users",
+      "summary": "Create a user account.",
+      "description": "Create a user account.",
+      "syntax": "useradd [OPTIONS] LOGIN",
+      "options": [
+        {
+          "flag": "-m",
+          "description": "Create the home directory."
+        },
+        {
+          "flag": "-s SHELL",
+          "description": "Set the login shell."
+        },
+        {
+          "flag": "-G GROUPS",
+          "description": "Set supplementary groups."
+        }
+      ],
+      "examples": [
+        {
+          "command": "useradd",
+          "description": "Create a user account.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Linux shadow-utils; typically requires administrative privileges.",
+      "tags": [],
+      "related": [
+        "usermod",
+        "userdel",
+        "passwd"
+      ]
+    },
+    {
+      "name": "userdel",
+      "category": "Permissions & Users",
+      "summary": "Delete a user account.",
+      "description": "Delete a user account.",
+      "syntax": "userdel [OPTIONS] LOGIN",
+      "options": [
+        {
+          "flag": "-r",
+          "description": "Also remove the home directory and mail spool."
+        }
+      ],
+      "examples": [
+        {
+          "command": "userdel",
+          "description": "Delete a user account.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Linux shadow-utils; destructive account operation.",
+      "tags": [],
+      "related": [
+        "useradd",
+        "usermod"
+      ]
+    },
+    {
+      "name": "usermod",
+      "category": "Permissions & Users",
+      "summary": "Modify an existing user account.",
+      "description": "Modify an existing user account.",
+      "syntax": "usermod [OPTIONS] LOGIN",
+      "options": [
+        {
+          "flag": "-aG GROUPS",
+          "description": "Append supplementary groups."
+        },
+        {
+          "flag": "-s SHELL",
+          "description": "Change the login shell."
+        },
+        {
+          "flag": "-L / -U",
+          "description": "Lock or unlock an account."
+        }
+      ],
+      "examples": [
+        {
+          "command": "usermod",
+          "description": "Modify an existing user account.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Linux shadow-utils; typically requires administrative privileges.",
+      "tags": [],
+      "related": [
+        "useradd",
+        "userdel",
+        "passwd"
+      ]
+    },
+    {
+      "name": "users",
+      "category": "Permissions & Users",
+      "summary": "Print usernames of currently logged-in users.",
+      "description": "Print usernames of currently logged-in users.",
+      "syntax": "users [FILE]",
+      "options": [],
+      "examples": [
+        {
+          "command": "users",
+          "description": "Print usernames of currently logged-in users.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "who",
+        "w"
+      ]
+    },
+    {
+      "name": "visudo",
+      "category": "Permissions & Users",
+      "summary": "Safely edit the sudoers policy file with syntax checking.",
+      "description": "Safely edit the sudoers policy file with syntax checking.",
+      "syntax": "visudo [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "visudo",
+          "description": "Safely edit the sudoers policy file with syntax checking.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Usually requires root privileges; syntax errors can disrupt sudo access.",
+      "tags": [],
+      "related": [
+        "sudo",
+        "su"
+      ]
+    },
+    {
+      "name": "vmstat",
+      "category": "Processes & Jobs",
+      "summary": "Report virtual memory, processes, and CPU statistics.",
+      "description": "Report virtual memory, processes, and CPU statistics.",
+      "syntax": "vmstat [OPTIONS] [DELAY [COUNT]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "vmstat",
+          "description": "Report virtual memory, processes, and CPU statistics.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "free",
+        "iostat"
+      ]
+    },
+    {
+      "name": "w",
+      "category": "Permissions & Users",
+      "summary": "Show logged-in users and their activity.",
+      "description": "Show logged-in users and their activity.",
+      "syntax": "w [OPTION]... [USER]",
+      "options": [],
+      "examples": [
+        {
+          "command": "w",
+          "description": "Show logged-in users and their activity.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "who",
+        "uptime"
+      ]
+    },
+    {
+      "name": "watch",
+      "category": "Processes & Jobs",
+      "summary": "Repeat a command at regular intervals.",
+      "description": "Repeat a command at regular intervals.",
+      "syntax": "watch [OPTIONS] COMMAND",
+      "options": [
+        {
+          "flag": "-n SEC",
+          "description": "Set the update interval."
+        },
+        {
+          "flag": "-d",
+          "description": "Highlight differences between updates."
+        }
+      ],
+      "examples": [
+        {
+          "command": "watch",
+          "description": "Repeat a command at regular intervals.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "top",
+        "sleep"
+      ]
+    },
+    {
+      "name": "wc",
+      "category": "Text Processing",
+      "summary": "Count lines, words, bytes, and characters.",
+      "description": "Count lines, words, bytes, and characters.",
+      "syntax": "wc [OPTION]... [FILE]...",
+      "options": [
+        {
+          "flag": "-l",
+          "description": "Count lines."
+        },
+        {
+          "flag": "-w",
+          "description": "Count words."
+        },
+        {
+          "flag": "-c",
+          "description": "Count bytes."
+        },
+        {
+          "flag": "-m",
+          "description": "Count characters."
+        }
+      ],
+      "examples": [
+        {
+          "command": "wc",
+          "description": "Count lines, words, bytes, and characters.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "cat",
+        "awk"
+      ]
+    },
+    {
+      "name": "wget",
+      "category": "Networking & Transfers",
+      "summary": "Download files from the web.",
+      "description": "Download files from the web.",
+      "syntax": "wget [OPTIONS] URL",
+      "options": [
+        {
+          "flag": "-O FILE",
+          "description": "Write output to FILE."
+        },
+        {
+          "flag": "-c",
+          "description": "Continue a partial download."
+        },
+        {
+          "flag": "-q",
+          "description": "Quiet mode."
+        }
+      ],
+      "examples": [
+        {
+          "command": "wget",
+          "description": "Download files from the web.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "curl",
+        "aria2c"
+      ]
+    },
+    {
+      "name": "whatis",
+      "category": "Help & Documentation",
+      "summary": "Display one-line manual descriptions.",
+      "description": "Display one-line manual descriptions.",
+      "syntax": "whatis NAME...",
+      "options": [],
+      "examples": [
+        {
+          "command": "whatis",
+          "description": "Display one-line manual descriptions.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "apropos",
+        "man"
+      ]
+    },
+    {
+      "name": "whereis",
+      "category": "Shell & Navigation",
+      "summary": "Locate binary, source, and manual files for a command.",
+      "description": "Locate binary, source, and manual files for a command.",
+      "syntax": "whereis [OPTION]... NAME...",
+      "options": [],
+      "examples": [
+        {
+          "command": "whereis",
+          "description": "Locate binary, source, and manual files for a command.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "which",
+        "type"
+      ]
+    },
+    {
+      "name": "which",
+      "category": "Shell & Navigation",
+      "summary": "Show the executable that would run for a command name.",
+      "description": "Show the executable that would run for a command name.",
+      "syntax": "which [OPTION]... COMMAND...",
+      "options": [],
+      "examples": [
+        {
+          "command": "which",
+          "description": "Show the executable that would run for a command name.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "External utility on some systems; shell builtin alternatives may differ.",
+      "tags": [],
+      "related": [
+        "type",
+        "command",
+        "whereis"
+      ]
+    },
+    {
+      "name": "who",
+      "category": "Permissions & Users",
+      "summary": "Show who is logged in.",
+      "description": "Show who is logged in.",
+      "syntax": "who [OPTION]...",
+      "options": [],
+      "examples": [
+        {
+          "command": "who",
+          "description": "Show who is logged in.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "w",
+        "users",
+        "last"
+      ]
+    },
+    {
+      "name": "whoami",
+      "category": "Permissions & Users",
+      "summary": "Print the effective username.",
+      "description": "Print the effective username.",
+      "syntax": "whoami",
+      "options": [],
+      "examples": [
+        {
+          "command": "whoami",
+          "description": "Print the effective username.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "id",
+        "who"
+      ]
+    },
+    {
+      "name": "xargs",
+      "category": "Text Processing",
+      "summary": "Build and run commands from standard input.",
+      "description": "Build and run commands from standard input.",
+      "syntax": "xargs [OPTION]... [COMMAND [INITIAL-ARGS]...]",
+      "options": [
+        {
+          "flag": "-0",
+          "description": "Read NUL-delimited input."
+        },
+        {
+          "flag": "-n N",
+          "description": "Use at most N arguments per command."
+        },
+        {
+          "flag": "-I STR",
+          "description": "Replace STR in the command line."
+        }
+      ],
+      "examples": [
+        {
+          "command": "xargs",
+          "description": "Build and run commands from standard input.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "find",
+        "parallel"
+      ]
+    },
+    {
+      "name": "xz",
+      "category": "Archives & Compression",
+      "summary": "Compress or decompress using XZ.",
+      "description": "Compress or decompress using XZ.",
+      "syntax": "xz [OPTIONS] [FILE...]",
+      "options": [
+        {
+          "flag": "-d",
+          "description": "Decompress."
+        },
+        {
+          "flag": "-k",
+          "description": "Keep input files."
+        },
+        {
+          "flag": "-T N",
+          "description": "Use N threads."
+        }
+      ],
+      "examples": [
+        {
+          "command": "xz",
+          "description": "Compress or decompress using XZ.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "gzip",
+        "bzip2"
+      ]
+    },
+    {
+      "name": "zip",
+      "category": "Archives & Compression",
+      "summary": "Package and compress files into a ZIP archive.",
+      "description": "Package and compress files into a ZIP archive.",
+      "syntax": "zip [OPTIONS] ARCHIVE FILE...",
+      "options": [],
+      "examples": [
+        {
+          "command": "zip",
+          "description": "Package and compress files into a ZIP archive.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Availability and behavior depend on the installed package and operating system version.",
+      "tags": [],
+      "related": [
+        "unzip",
+        "tar"
+      ]
+    },
+    {
+      "name": "zsh",
+      "category": "Shell & Scripting",
+      "summary": "Start the Z shell.",
+      "description": "Start the Z shell.",
+      "syntax": "zsh [OPTIONS] [SCRIPT [ARGUMENTS...]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "zsh",
+          "description": "Start the Z shell.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Requires zsh package.",
+      "tags": [],
+      "related": [
+        "bash",
+        "sh"
+      ]
+    },
+    {
+      "name": "zypper",
+      "category": "Package Management",
+      "summary": "Manage packages on openSUSE and SUSE Linux Enterprise.",
+      "description": "Manage packages on openSUSE and SUSE Linux Enterprise.",
+      "syntax": "zypper [OPTIONS] COMMAND",
+      "options": [
+        {
+          "flag": "refresh",
+          "description": "Refresh repositories."
+        },
+        {
+          "flag": "install PACKAGE",
+          "description": "Install a package."
+        },
+        {
+          "flag": "update",
+          "description": "Update packages."
+        },
+        {
+          "flag": "search TERM",
+          "description": "Search packages."
+        }
+      ],
+      "examples": [
+        {
+          "command": "zypper",
+          "description": "Manage packages on openSUSE and SUSE Linux Enterprise.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "SUSE family.",
+      "tags": [],
+      "related": [
+        "rpm"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1110">
+  <meta name="description" content="An interactive Linux and Windows Command Prompt command reference with autocomplete, examples, syntax, and safety notes.">
+  <title>Command Academy — Learn the command line</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b1110'/%3E%3Cpath d='M25 33l17 17-17 17M49 67h27' fill='none' stroke='%2388f0aa' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/command-academy.css">
+</head>
+<body>
+  <main id="command-academy" class="ca-standalone" aria-live="polite">
+    <div class="ca-loading">Loading Command Academy…</div>
+  </main>
+  <script src="assets/js/app.js"></script>
+  <script>
+    window.CommandAcademy.mount(document.getElementById('command-academy'), new URL('./', window.location.href));
+  </script>
+</body>
+</html>

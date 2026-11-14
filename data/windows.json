@@ -1,0 +1,3125 @@
+{
+  "platform": "windows",
+  "title": "Windows CMD Command Library",
+  "shell": "Windows Command Prompt (cmd.exe)",
+  "schema_version": 1,
+  "commands": [
+    {
+      "name": "arp",
+      "category": "Networking",
+      "summary": "Display or modify the IP-to-physical-address mapping table.",
+      "description": "Display or modify the IP-to-physical-address mapping table.",
+      "syntax": "arp -a | -d | -s [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "arp",
+          "description": "Display or modify the IP-to-physical-address mapping table.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "ipconfig",
+        "route"
+      ]
+    },
+    {
+      "name": "assoc",
+      "category": "Shell & Batch",
+      "summary": "Display or modify file-extension associations.",
+      "description": "Display or modify file-extension associations.",
+      "syntax": "assoc [.EXT[=[FILETYPE]]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "assoc",
+          "description": "Display or modify file-extension associations.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "ftype"
+      ]
+    },
+    {
+      "name": "attrib",
+      "category": "Files & Directories",
+      "summary": "Display or change file attributes.",
+      "description": "Display or change file attributes.",
+      "syntax": "attrib [+R|-R] [+A|-A] [+S|-S] [+H|-H] [PATH] [/s [/d]]",
+      "options": [
+        {
+          "flag": "+R / -R",
+          "description": "Set or clear the read-only attribute."
+        },
+        {
+          "flag": "+H / -H",
+          "description": "Set or clear the hidden attribute."
+        },
+        {
+          "flag": "+S / -S",
+          "description": "Set or clear the system attribute."
+        },
+        {
+          "flag": "/s /d",
+          "description": "Process matching files and directories recursively."
+        }
+      ],
+      "examples": [
+        {
+          "command": "attrib",
+          "description": "Display or change file attributes.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "icacls",
+        "dir"
+      ]
+    },
+    {
+      "name": "bitsadmin",
+      "category": "Networking & Transfers",
+      "summary": "Manage Background Intelligent Transfer Service jobs.",
+      "description": "Manage Background Intelligent Transfer Service jobs.",
+      "syntax": "bitsadmin /list | /transfer | /cancel | ...",
+      "options": [],
+      "examples": [
+        {
+          "command": "bitsadmin",
+          "description": "Manage Background Intelligent Transfer Service jobs.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Legacy utility; PowerShell BITS cmdlets are preferred for many modern workflows.",
+      "tags": [],
+      "related": [
+        "curl",
+        "certutil"
+      ]
+    },
+    {
+      "name": "call",
+      "category": "Shell & Batch",
+      "summary": "Call one batch program from another or call a label.",
+      "description": "Call one batch program from another or call a label.",
+      "syntax": "call [DRIVE:][PATH]FILE [ARGUMENTS...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "call",
+          "description": "Call one batch program from another or call a label.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Batch-file command.",
+      "tags": [],
+      "related": [
+        "goto",
+        "exit"
+      ]
+    },
+    {
+      "name": "cd",
+      "category": "Files & Directories",
+      "summary": "Display or change the current directory.",
+      "description": "Display or change the current directory.",
+      "syntax": "cd [/d] [DRIVE:][PATH]",
+      "options": [
+        {
+          "flag": "/d",
+          "description": "Change both drive and directory."
+        },
+        {
+          "flag": "..",
+          "description": "Move to parent directory."
+        }
+      ],
+      "examples": [
+        {
+          "command": "cd /d C:\\Users\\Lamer\\Documents",
+          "description": "Change drive and directory together.",
+          "output": "(no output)"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "chdir",
+        "pushd",
+        "popd"
+      ]
+    },
+    {
+      "name": "certutil",
+      "category": "Security & Certificates",
+      "summary": "Manage certificate services and perform certificate-related tasks.",
+      "description": "Manage certificate services and perform certificate-related tasks.",
+      "syntax": "certutil [OPTIONS] [COMMAND]",
+      "options": [
+        {
+          "flag": "-hashfile FILE SHA256",
+          "description": "Calculate a file hash."
+        },
+        {
+          "flag": "-dump",
+          "description": "Display certificate or file information."
+        }
+      ],
+      "examples": [
+        {
+          "command": "certutil",
+          "description": "Manage certificate services and perform certificate-related tasks.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows certificate utility; supports many functions beyond these examples.",
+      "tags": [],
+      "related": [
+        "curl",
+        "gpg"
+      ]
+    },
+    {
+      "name": "chcp",
+      "category": "Shell & Batch",
+      "summary": "Display or change the active console code page.",
+      "description": "Display or change the active console code page.",
+      "syntax": "chcp [CODEPAGE]",
+      "options": [],
+      "examples": [
+        {
+          "command": "chcp",
+          "description": "Display or change the active console code page.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "mode",
+        "cmd"
+      ]
+    },
+    {
+      "name": "chdir",
+      "category": "Files & Directories",
+      "summary": "Display or change the current directory.",
+      "description": "Display or change the current directory.",
+      "syntax": "chdir [/d] [DRIVE:][PATH]",
+      "options": [],
+      "examples": [
+        {
+          "command": "chdir",
+          "description": "Display or change the current directory.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "cd"
+      ]
+    },
+    {
+      "name": "chkdsk",
+      "category": "Storage & Disks",
+      "summary": "Check a disk and display a status report.",
+      "description": "Check a disk and display a status report.",
+      "syntax": "chkdsk [VOLUME] [/f] [/r] [/x]",
+      "options": [
+        {
+          "flag": "/f",
+          "description": "Fix filesystem errors."
+        },
+        {
+          "flag": "/r",
+          "description": "Locate bad sectors and recover readable information."
+        },
+        {
+          "flag": "/x",
+          "description": "Force dismount first if needed."
+        }
+      ],
+      "examples": [
+        {
+          "command": "chkdsk",
+          "description": "Check a disk and display a status report.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "repair-volume",
+        "diskpart"
+      ]
+    },
+    {
+      "name": "choice",
+      "category": "Shell & Batch",
+      "summary": "Prompt the user to select from a list of choices in a batch file.",
+      "description": "Prompt the user to select from a list of choices in a batch file.",
+      "syntax": "choice [/c CHOICES] [/n] [/t N /d C] [/m TEXT]",
+      "options": [
+        {
+          "flag": "/c",
+          "description": "Specify allowed keys."
+        },
+        {
+          "flag": "/t",
+          "description": "Set a timeout."
+        },
+        {
+          "flag": "/d",
+          "description": "Set the default choice."
+        },
+        {
+          "flag": "/m",
+          "description": "Display a prompt message."
+        }
+      ],
+      "examples": [
+        {
+          "command": "choice",
+          "description": "Prompt the user to select from a list of choices in a batch file.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Batch-file command.",
+      "tags": [],
+      "related": [
+        "if",
+        "set"
+      ]
+    },
+    {
+      "name": "cipher",
+      "category": "Storage & Security",
+      "summary": "Display or alter encryption settings on NTFS files and directories.",
+      "description": "Display or alter encryption settings on NTFS files and directories.",
+      "syntax": "cipher [/e | /d | /c] [PATH]",
+      "options": [],
+      "examples": [
+        {
+          "command": "cipher",
+          "description": "Display or alter encryption settings on NTFS files and directories.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "EFS features depend on Windows edition and filesystem.",
+      "tags": [],
+      "related": [
+        "icacls",
+        "compact"
+      ]
+    },
+    {
+      "name": "clip",
+      "category": "Shell & Batch",
+      "summary": "Redirect command output to the Windows clipboard.",
+      "description": "Redirect command output to the Windows clipboard.",
+      "syntax": "COMMAND | clip",
+      "options": [],
+      "examples": [
+        {
+          "command": "echo Hello | clip",
+          "description": "Copy text to the clipboard.",
+          "output": "(text is placed on the clipboard)"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "echo",
+        "type"
+      ]
+    },
+    {
+      "name": "cls",
+      "category": "Shell & Batch",
+      "summary": "Clear the Command Prompt screen.",
+      "description": "Clear the Command Prompt screen.",
+      "syntax": "cls",
+      "options": [],
+      "examples": [
+        {
+          "command": "cls",
+          "description": "Clear the Command Prompt screen.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "color",
+        "prompt"
+      ]
+    },
+    {
+      "name": "cmd",
+      "category": "Shell & Scripting",
+      "summary": "Start a new Command Prompt interpreter.",
+      "description": "Start a new Command Prompt interpreter.",
+      "syntax": "cmd [/c | /k] [COMMAND]",
+      "options": [
+        {
+          "flag": "/c",
+          "description": "Run a command and exit."
+        },
+        {
+          "flag": "/k",
+          "description": "Run a command and remain open."
+        },
+        {
+          "flag": "/d",
+          "description": "Disable AutoRun commands."
+        }
+      ],
+      "examples": [
+        {
+          "command": "cmd",
+          "description": "Start a new Command Prompt interpreter.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "powershell",
+        "exit"
+      ]
+    },
+    {
+      "name": "color",
+      "category": "Shell & Batch",
+      "summary": "Set foreground and background colors for the console.",
+      "description": "Set foreground and background colors for the console.",
+      "syntax": "color [ATTR]",
+      "options": [
+        {
+          "flag": "0–F",
+          "description": "Hexadecimal background and foreground color attributes."
+        }
+      ],
+      "examples": [
+        {
+          "command": "color",
+          "description": "Set foreground and background colors for the console.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "title",
+        "cls"
+      ]
+    },
+    {
+      "name": "comp",
+      "category": "Files & Directories",
+      "summary": "Compare the contents of two files or sets of files.",
+      "description": "Compare the contents of two files or sets of files.",
+      "syntax": "comp [DATA1] [DATA2] [/d] [/a] [/l] [/n=NUMBER]",
+      "options": [],
+      "examples": [
+        {
+          "command": "comp",
+          "description": "Compare the contents of two files or sets of files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "fc"
+      ]
+    },
+    {
+      "name": "compact",
+      "category": "Storage & Files",
+      "summary": "Display or alter NTFS file compression.",
+      "description": "Display or alter NTFS file compression.",
+      "syntax": "compact [/c | /u] [/s[:DIR]] [FILE...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "compact",
+          "description": "Display or alter NTFS file compression.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "cipher",
+        "attrib"
+      ]
+    },
+    {
+      "name": "copy",
+      "category": "Files & Directories",
+      "summary": "Copy one or more files.",
+      "description": "Copy one or more files.",
+      "syntax": "copy [/y | /-y] SOURCE [DESTINATION]",
+      "options": [
+        {
+          "flag": "/y",
+          "description": "Suppress overwrite confirmation."
+        },
+        {
+          "flag": "/-y",
+          "description": "Prompt before overwriting."
+        }
+      ],
+      "examples": [
+        {
+          "command": "copy",
+          "description": "Copy one or more files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "xcopy",
+        "robocopy"
+      ]
+    },
+    {
+      "name": "curl",
+      "category": "Networking & Transfers",
+      "summary": "Transfer data to or from URLs.",
+      "description": "Transfer data to or from URLs.",
+      "syntax": "curl [OPTIONS] URL",
+      "options": [
+        {
+          "flag": "-I",
+          "description": "Fetch response headers only."
+        },
+        {
+          "flag": "-L",
+          "description": "Follow redirects."
+        },
+        {
+          "flag": "-o FILE",
+          "description": "Write output to a file."
+        },
+        {
+          "flag": "-X METHOD",
+          "description": "Set request method."
+        }
+      ],
+      "examples": [
+        {
+          "command": "curl",
+          "description": "Transfer data to or from URLs.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Included in modern Windows 10/11 builds; older versions may lack curl.",
+      "tags": [],
+      "related": [
+        "bitsadmin",
+        "certutil"
+      ]
+    },
+    {
+      "name": "date",
+      "category": "Shell & Batch",
+      "summary": "Display or set the system date.",
+      "description": "Display or set the system date.",
+      "syntax": "date [/t | DATE]",
+      "options": [],
+      "examples": [
+        {
+          "command": "date",
+          "description": "Display or set the system date.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "time",
+        "tzutil"
+      ]
+    },
+    {
+      "name": "defrag",
+      "category": "Storage & Disks",
+      "summary": "Optimize a drive.",
+      "description": "Optimize a drive.",
+      "syntax": "defrag VOLUME [OPTIONS]",
+      "options": [
+        {
+          "flag": "/a",
+          "description": "Perform analysis only."
+        },
+        {
+          "flag": "/o",
+          "description": "Perform appropriate optimization."
+        },
+        {
+          "flag": "/x",
+          "description": "Consolidate free space."
+        }
+      ],
+      "examples": [
+        {
+          "command": "defrag",
+          "description": "Optimize a drive.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "chkdsk",
+        "optimize-volume"
+      ]
+    },
+    {
+      "name": "del",
+      "category": "Files & Directories",
+      "summary": "Delete one or more files.",
+      "description": "Delete one or more files.",
+      "syntax": "del [/p] [/f] [/s] [/q] [/a[:ATTRIBUTES]] FILES",
+      "options": [
+        {
+          "flag": "/p",
+          "description": "Prompt before each file deletion."
+        },
+        {
+          "flag": "/f",
+          "description": "Force deletion of read-only files."
+        },
+        {
+          "flag": "/s",
+          "description": "Delete matching files in subdirectories."
+        },
+        {
+          "flag": "/q",
+          "description": "Quiet mode."
+        },
+        {
+          "flag": "/a",
+          "description": "Select files by attributes."
+        }
+      ],
+      "examples": [
+        {
+          "command": "del",
+          "description": "Delete one or more files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "erase",
+        "rd"
+      ]
+    },
+    {
+      "name": "dir",
+      "category": "Files & Directories",
+      "summary": "List files and subdirectories.",
+      "description": "List files and subdirectories.",
+      "syntax": "dir [DRIVE:][PATH][FILENAME] [OPTIONS]",
+      "options": [
+        {
+          "flag": "/a",
+          "description": "Display files with specified attributes."
+        },
+        {
+          "flag": "/b",
+          "description": "Use bare format."
+        },
+        {
+          "flag": "/o",
+          "description": "Sort listing."
+        },
+        {
+          "flag": "/s",
+          "description": "Include subdirectories."
+        },
+        {
+          "flag": "/w",
+          "description": "Use wide listing."
+        },
+        {
+          "flag": "/p",
+          "description": "Pause after each screen."
+        }
+      ],
+      "examples": [
+        {
+          "command": "dir /a /w",
+          "description": "List all entries in wide format.",
+          "output": " Volume in drive C is Windows\n Directory of C:\\Users\\Lamer\n..."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "tree",
+        "where"
+      ]
+    },
+    {
+      "name": "diskpart",
+      "category": "Storage & Disks",
+      "summary": "Manage disks, partitions, and volumes interactively.",
+      "description": "Manage disks, partitions, and volumes interactively.",
+      "syntax": "diskpart",
+      "options": [],
+      "examples": [
+        {
+          "command": "diskpart",
+          "description": "Manage disks, partitions, and volumes interactively.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Interactive utility; destructive commands can erase partitions and data.",
+      "tags": [],
+      "related": [
+        "chkdsk",
+        "format",
+        "mountvol"
+      ]
+    },
+    {
+      "name": "dism",
+      "category": "System Repair",
+      "summary": "Service and repair Windows images.",
+      "description": "Service and repair Windows images.",
+      "syntax": "dism /Online /Cleanup-Image [OPTIONS]",
+      "options": [
+        {
+          "flag": "/CheckHealth",
+          "description": "Check whether corruption has been detected."
+        },
+        {
+          "flag": "/ScanHealth",
+          "description": "Scan the image for component store corruption."
+        },
+        {
+          "flag": "/RestoreHealth",
+          "description": "Repair the component store when possible."
+        }
+      ],
+      "examples": [
+        {
+          "command": "dism",
+          "description": "Service and repair Windows images.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Administrative rights and internet access may be required for some repair sources.",
+      "tags": [],
+      "related": [
+        "sfc",
+        "windows-update"
+      ]
+    },
+    {
+      "name": "doskey",
+      "category": "Shell & Batch",
+      "summary": "Edit command lines, recall commands, and create macros.",
+      "description": "Edit command lines, recall commands, and create macros.",
+      "syntax": "doskey [MACRO=TEXT] [OPTIONS]",
+      "options": [
+        {
+          "flag": "/history",
+          "description": "Display command history."
+        },
+        {
+          "flag": "/macros",
+          "description": "Display defined macros."
+        },
+        {
+          "flag": "/reinstall",
+          "description": "Install a new copy of Doskey."
+        }
+      ],
+      "examples": [
+        {
+          "command": "doskey",
+          "description": "Edit command lines, recall commands, and create macros.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "help",
+        "prompt"
+      ]
+    },
+    {
+      "name": "driverquery",
+      "category": "System Information",
+      "summary": "Display installed device drivers.",
+      "description": "Display installed device drivers.",
+      "syntax": "driverquery [/v] [/fo FORMAT] [/si]",
+      "options": [
+        {
+          "flag": "/v",
+          "description": "Show verbose information."
+        },
+        {
+          "flag": "/fo FORMAT",
+          "description": "Choose TABLE, LIST, or CSV output."
+        },
+        {
+          "flag": "/si",
+          "description": "Show driver signature information."
+        }
+      ],
+      "examples": [
+        {
+          "command": "driverquery",
+          "description": "Display installed device drivers.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "systeminfo",
+        "pnputil"
+      ]
+    },
+    {
+      "name": "dxdiag",
+      "category": "System Information",
+      "summary": "Open the DirectX Diagnostic Tool.",
+      "description": "Open the DirectX Diagnostic Tool.",
+      "syntax": "dxdiag [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "dxdiag",
+          "description": "Open the DirectX Diagnostic Tool.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Launches a Windows diagnostic GUI.",
+      "tags": [],
+      "related": [
+        "msinfo32",
+        "systeminfo"
+      ]
+    },
+    {
+      "name": "echo",
+      "category": "Shell & Batch",
+      "summary": "Display messages or turn command echoing on or off.",
+      "description": "Display messages or turn command echoing on or off.",
+      "syntax": "echo [ON | OFF] | [MESSAGE]",
+      "options": [],
+      "examples": [
+        {
+          "command": "echo Hello from CMD",
+          "description": "Print a message.",
+          "output": "Hello from CMD"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "@",
+        "rem"
+      ]
+    },
+    {
+      "name": "endlocal",
+      "category": "Shell & Batch",
+      "summary": "End localization of environment changes in a batch file.",
+      "description": "End localization of environment changes in a batch file.",
+      "syntax": "endlocal",
+      "options": [],
+      "examples": [
+        {
+          "command": "endlocal",
+          "description": "End localization of environment changes in a batch file.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Batch-file command.",
+      "tags": [],
+      "related": [
+        "setlocal"
+      ]
+    },
+    {
+      "name": "erase",
+      "category": "Files & Directories",
+      "summary": "Delete one or more files.",
+      "description": "Delete one or more files.",
+      "syntax": "erase [/p] [/f] [/s] [/q] FILES",
+      "options": [],
+      "examples": [
+        {
+          "command": "erase",
+          "description": "Delete one or more files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "del"
+      ]
+    },
+    {
+      "name": "exit",
+      "category": "Shell & Batch",
+      "summary": "Exit CMD or a batch script.",
+      "description": "Exit CMD or a batch script.",
+      "syntax": "exit [/b] [EXITCODE]",
+      "options": [
+        {
+          "flag": "/b",
+          "description": "Exit the current batch script instead of CMD itself."
+        }
+      ],
+      "examples": [
+        {
+          "command": "exit",
+          "description": "Exit CMD or a batch script.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "call",
+        "start"
+      ]
+    },
+    {
+      "name": "fc",
+      "category": "Files & Directories",
+      "summary": "Compare two files or sets of files.",
+      "description": "Compare two files or sets of files.",
+      "syntax": "fc [/b] [/c] [/n] FILE1 FILE2",
+      "options": [
+        {
+          "flag": "/b",
+          "description": "Perform a binary comparison."
+        },
+        {
+          "flag": "/c",
+          "description": "Ignore case."
+        },
+        {
+          "flag": "/n",
+          "description": "Show line numbers in text comparison."
+        }
+      ],
+      "examples": [
+        {
+          "command": "fc",
+          "description": "Compare two files or sets of files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "comp",
+        "findstr"
+      ]
+    },
+    {
+      "name": "for",
+      "category": "Shell & Batch",
+      "summary": "Run a command for each item in a set.",
+      "description": "Run a command for each item in a set.",
+      "syntax": "for %variable in (set) do command [parameters]",
+      "options": [],
+      "examples": [
+        {
+          "command": "for",
+          "description": "Run a command for each item in a set.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Use %%variable in batch files; use %variable interactively.",
+      "tags": [],
+      "related": [
+        "if",
+        "set"
+      ]
+    },
+    {
+      "name": "forfiles",
+      "category": "Shell & Batch",
+      "summary": "Select files for batch processing using filters.",
+      "description": "Select files for batch processing using filters.",
+      "syntax": "forfiles [/p PATH] [/s] [/m MASK] [/c COMMAND]",
+      "options": [],
+      "examples": [
+        {
+          "command": "forfiles",
+          "description": "Select files for batch processing using filters.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "for",
+        "dir"
+      ]
+    },
+    {
+      "name": "format",
+      "category": "Storage & Disks",
+      "summary": "Format a disk for use with Windows.",
+      "description": "Format a disk for use with Windows.",
+      "syntax": "format VOLUME [/fs:FILESYSTEM] [/q] [/v:LABEL]",
+      "options": [
+        {
+          "flag": "/fs:FILESYSTEM",
+          "description": "Choose filesystem, such as NTFS or FAT32."
+        },
+        {
+          "flag": "/q",
+          "description": "Quick format."
+        },
+        {
+          "flag": "/v:LABEL",
+          "description": "Set a volume label."
+        }
+      ],
+      "examples": [
+        {
+          "command": "format",
+          "description": "Format a disk for use with Windows.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "diskpart",
+        "chkdsk"
+      ]
+    },
+    {
+      "name": "fsutil",
+      "category": "Storage & Disks",
+      "summary": "Perform advanced filesystem tasks.",
+      "description": "Perform advanced filesystem tasks.",
+      "syntax": "fsutil [BEHAVIOR|DAX|DIRTY|FILE|FSINFO|HARDLINK|OBJECTID|QUOTA|REPARSEPOINT|STORAGE|USN|VOLUME] ...",
+      "options": [],
+      "examples": [
+        {
+          "command": "fsutil",
+          "description": "Perform advanced filesystem tasks.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "chkdsk",
+        "diskpart"
+      ]
+    },
+    {
+      "name": "ftp",
+      "category": "Networking & Transfers",
+      "summary": "Start an interactive FTP client session.",
+      "description": "Start an interactive FTP client session.",
+      "syntax": "ftp [-v] [-n] [HOST]",
+      "options": [],
+      "examples": [
+        {
+          "command": "ftp",
+          "description": "Start an interactive FTP client session.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Legacy FTP is unencrypted; avoid sending credentials over untrusted networks.",
+      "tags": [],
+      "related": [
+        "curl",
+        "sftp"
+      ]
+    },
+    {
+      "name": "ftype",
+      "category": "Shell & Batch",
+      "summary": "Display or modify file-type open commands.",
+      "description": "Display or modify file-type open commands.",
+      "syntax": "ftype [FILETYPE[=[OPENCOMMAND]]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "ftype",
+          "description": "Display or modify file-type open commands.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "assoc"
+      ]
+    },
+    {
+      "name": "getmac",
+      "category": "Networking",
+      "summary": "Display the MAC addresses of network adapters.",
+      "description": "Display the MAC addresses of network adapters.",
+      "syntax": "getmac [/s COMPUTER] [/v] [/fo FORMAT]",
+      "options": [],
+      "examples": [
+        {
+          "command": "getmac",
+          "description": "Display the MAC addresses of network adapters.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "ipconfig",
+        "wmic"
+      ]
+    },
+    {
+      "name": "goto",
+      "category": "Shell & Batch",
+      "summary": "Direct batch processing to a labeled line.",
+      "description": "Direct batch processing to a labeled line.",
+      "syntax": "goto LABEL",
+      "options": [],
+      "examples": [
+        {
+          "command": "goto",
+          "description": "Direct batch processing to a labeled line.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Batch-file command.",
+      "tags": [],
+      "related": [
+        "call",
+        "if"
+      ]
+    },
+    {
+      "name": "gpresult",
+      "category": "System Administration",
+      "summary": "Display applied Group Policy information.",
+      "description": "Display applied Group Policy information.",
+      "syntax": "gpresult [/r] [/h FILE] [/scope computer|user]",
+      "options": [
+        {
+          "flag": "/r",
+          "description": "Show summary."
+        },
+        {
+          "flag": "/h FILE",
+          "description": "Save an HTML report."
+        },
+        {
+          "flag": "/scope",
+          "description": "Select user or computer policy."
+        }
+      ],
+      "examples": [
+        {
+          "command": "gpresult",
+          "description": "Display applied Group Policy information.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "gpupdate"
+      ]
+    },
+    {
+      "name": "gpupdate",
+      "category": "System Administration",
+      "summary": "Refresh Group Policy settings.",
+      "description": "Refresh Group Policy settings.",
+      "syntax": "gpupdate [/target:computer|user] [/force]",
+      "options": [
+        {
+          "flag": "/target",
+          "description": "Choose computer or user policy."
+        },
+        {
+          "flag": "/force",
+          "description": "Reapply all policy settings."
+        }
+      ],
+      "examples": [
+        {
+          "command": "gpupdate",
+          "description": "Refresh Group Policy settings.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "gpresult",
+        "rsop.msc"
+      ]
+    },
+    {
+      "name": "help",
+      "category": "Help & Shell",
+      "summary": "Display help for available CMD commands.",
+      "description": "Display help for available CMD commands.",
+      "syntax": "help [COMMAND]",
+      "options": [],
+      "examples": [
+        {
+          "command": "help dir",
+          "description": "Display help for DIR.",
+          "output": "Displays a list of files and subdirectories in a directory."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "/?"
+      ]
+    },
+    {
+      "name": "hostname",
+      "category": "Networking",
+      "summary": "Display the computer name.",
+      "description": "Display the computer name.",
+      "syntax": "hostname",
+      "options": [],
+      "examples": [
+        {
+          "command": "hostname",
+          "description": "Display the computer name.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "systeminfo",
+        "whoami"
+      ]
+    },
+    {
+      "name": "icacls",
+      "category": "Storage & Security",
+      "summary": "Display or modify file and directory access-control lists.",
+      "description": "Display or modify file and directory access-control lists.",
+      "syntax": "icacls PATH [OPTIONS]",
+      "options": [
+        {
+          "flag": "/grant USER:PERMS",
+          "description": "Grant permissions."
+        },
+        {
+          "flag": "/deny USER:PERMS",
+          "description": "Explicitly deny permissions."
+        },
+        {
+          "flag": "/inheritance:e|d|r",
+          "description": "Enable, disable, or remove inheritance."
+        },
+        {
+          "flag": "/t",
+          "description": "Process matching files recursively."
+        }
+      ],
+      "examples": [
+        {
+          "command": "icacls",
+          "description": "Display or modify file and directory access-control lists.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "attrib",
+        "takeown"
+      ]
+    },
+    {
+      "name": "if",
+      "category": "Shell & Batch",
+      "summary": "Perform conditional processing in a batch program.",
+      "description": "Perform conditional processing in a batch program.",
+      "syntax": "if [NOT] ERRORLEVEL NUMBER COMMAND\nif [NOT] STRING1==STRING2 COMMAND\nif [NOT] EXIST FILE COMMAND",
+      "options": [],
+      "examples": [
+        {
+          "command": "if",
+          "description": "Perform conditional processing in a batch program.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "CMD batch syntax; quoting and expansion rules are important.",
+      "tags": [],
+      "related": [
+        "for",
+        "goto"
+      ]
+    },
+    {
+      "name": "ipconfig",
+      "category": "Networking",
+      "summary": "Display and manage IP configuration.",
+      "description": "Display and manage IP configuration.",
+      "syntax": "ipconfig [/all] [/release] [/renew] [/flushdns] [/displaydns]",
+      "options": [
+        {
+          "flag": "/all",
+          "description": "Display full TCP/IP configuration."
+        },
+        {
+          "flag": "/release",
+          "description": "Release DHCP configuration for adapters."
+        },
+        {
+          "flag": "/renew",
+          "description": "Renew DHCP configuration."
+        },
+        {
+          "flag": "/flushdns",
+          "description": "Clear the DNS resolver cache."
+        },
+        {
+          "flag": "/displaydns",
+          "description": "Display DNS resolver cache."
+        }
+      ],
+      "examples": [
+        {
+          "command": "ipconfig",
+          "description": "Display and manage IP configuration.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "ping",
+        "getmac",
+        "netsh"
+      ]
+    },
+    {
+      "name": "label",
+      "category": "Storage & Disks",
+      "summary": "Create, change, or delete a volume label.",
+      "description": "Create, change, or delete a volume label.",
+      "syntax": "label [DRIVE:][LABEL]",
+      "options": [],
+      "examples": [
+        {
+          "command": "label",
+          "description": "Create, change, or delete a volume label.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "vol",
+        "format"
+      ]
+    },
+    {
+      "name": "logoff",
+      "category": "System Administration",
+      "summary": "Sign out a user session.",
+      "description": "Sign out a user session.",
+      "syntax": "logoff [SESSIONID] [/server:SERVER]",
+      "options": [],
+      "examples": [
+        {
+          "command": "logoff",
+          "description": "Sign out a user session.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "shutdown",
+        "query"
+      ]
+    },
+    {
+      "name": "md",
+      "category": "Files & Directories",
+      "summary": "Create a directory.",
+      "description": "Create a directory.",
+      "syntax": "md [DRIVE:]PATH",
+      "options": [],
+      "examples": [
+        {
+          "command": "md Projects\\Demo",
+          "description": "Create a Demo directory inside Projects.",
+          "output": "(no output)"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "mkdir",
+        "rd"
+      ]
+    },
+    {
+      "name": "mkdir",
+      "category": "Files & Directories",
+      "summary": "Create a directory.",
+      "description": "Create a directory.",
+      "syntax": "mkdir [DRIVE:]PATH",
+      "options": [],
+      "examples": [
+        {
+          "command": "mkdir",
+          "description": "Create a directory.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "md",
+        "rd"
+      ]
+    },
+    {
+      "name": "mklink",
+      "category": "Files & Directories",
+      "summary": "Create symbolic links and directory junctions.",
+      "description": "Create symbolic links and directory junctions.",
+      "syntax": "mklink [[/d] | [/h] | [/j]] LINK TARGET",
+      "options": [
+        {
+          "flag": "/d",
+          "description": "Create a directory symbolic link."
+        },
+        {
+          "flag": "/h",
+          "description": "Create a hard link."
+        },
+        {
+          "flag": "/j",
+          "description": "Create a directory junction."
+        }
+      ],
+      "examples": [
+        {
+          "command": "mklink",
+          "description": "Create symbolic links and directory junctions.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "dir",
+        "fsutil"
+      ]
+    },
+    {
+      "name": "mode",
+      "category": "Shell & Batch",
+      "summary": "Configure console, serial, or device settings.",
+      "description": "Configure console, serial, or device settings.",
+      "syntax": "mode [DEVICE] [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "mode",
+          "description": "Configure console, serial, or device settings.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "chcp",
+        "prompt"
+      ]
+    },
+    {
+      "name": "more",
+      "category": "Files & Directories",
+      "summary": "Display output one screen at a time.",
+      "description": "Display output one screen at a time.",
+      "syntax": "more [/e] [/c] [/p] [/s] [/tN] [+N] [FILE]",
+      "options": [],
+      "examples": [
+        {
+          "command": "more",
+          "description": "Display output one screen at a time.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "type",
+        "dir"
+      ]
+    },
+    {
+      "name": "mountvol",
+      "category": "Storage & Disks",
+      "summary": "Create, delete, or list volume mount points.",
+      "description": "Create, delete, or list volume mount points.",
+      "syntax": "mountvol [DRIVE:] PATH VOLUME_NAME",
+      "options": [],
+      "examples": [
+        {
+          "command": "mountvol",
+          "description": "Create, delete, or list volume mount points.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "diskpart",
+        "fsutil"
+      ]
+    },
+    {
+      "name": "move",
+      "category": "Files & Directories",
+      "summary": "Move files and rename files or directories.",
+      "description": "Move files and rename files or directories.",
+      "syntax": "move [/y | /-y] SOURCE DESTINATION",
+      "options": [],
+      "examples": [
+        {
+          "command": "move",
+          "description": "Move files and rename files or directories.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "ren",
+        "copy"
+      ]
+    },
+    {
+      "name": "msinfo32",
+      "category": "System Information",
+      "summary": "Open the System Information graphical utility.",
+      "description": "Open the System Information graphical utility.",
+      "syntax": "msinfo32 [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "msinfo32",
+          "description": "Open the System Information graphical utility.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Launches a Windows GUI utility.",
+      "tags": [],
+      "related": [
+        "systeminfo",
+        "dxdiag"
+      ]
+    },
+    {
+      "name": "net",
+      "category": "Networking & Accounts",
+      "summary": "Manage network resources, services, and accounts.",
+      "description": "Manage network resources, services, and accounts.",
+      "syntax": "net [COMMAND] [OPTIONS]",
+      "options": [
+        {
+          "flag": "user",
+          "description": "Display or manage user accounts."
+        },
+        {
+          "flag": "use",
+          "description": "Connect to a shared resource."
+        },
+        {
+          "flag": "share",
+          "description": "Manage shared resources."
+        },
+        {
+          "flag": "start / stop",
+          "description": "Start or stop a service."
+        }
+      ],
+      "examples": [
+        {
+          "command": "net",
+          "description": "Manage network resources, services, and accounts.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "net1",
+        "sc"
+      ]
+    },
+    {
+      "name": "net localgroup",
+      "category": "Networking & Accounts",
+      "summary": "Display or manage local groups.",
+      "description": "Display or manage local groups.",
+      "syntax": "net localgroup [GROUPNAME [USERNAME [OPTIONS]]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "net localgroup",
+          "description": "Display or manage local groups.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "net user",
+        "whoami"
+      ]
+    },
+    {
+      "name": "net share",
+      "category": "Networking & Shares",
+      "summary": "Create, remove, or display shared resources.",
+      "description": "Create, remove, or display shared resources.",
+      "syntax": "net share [SHARE=DRIVE:PATH] [/delete]",
+      "options": [],
+      "examples": [
+        {
+          "command": "net share",
+          "description": "Create, remove, or display shared resources.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "net use",
+        "icacls"
+      ]
+    },
+    {
+      "name": "net use",
+      "category": "Networking & Shares",
+      "summary": "Connect to or disconnect from shared network resources.",
+      "description": "Connect to or disconnect from shared network resources.",
+      "syntax": "net use [DRIVE:] [\\\\COMPUTER\\SHARE] [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "net use",
+          "description": "Connect to or disconnect from shared network resources.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "net",
+        "net view"
+      ]
+    },
+    {
+      "name": "net user",
+      "category": "Networking & Accounts",
+      "summary": "Display or manage local user accounts.",
+      "description": "Display or manage local user accounts.",
+      "syntax": "net user [USERNAME [PASSWORD | *] [OPTIONS]] [/add | /delete]",
+      "options": [],
+      "examples": [
+        {
+          "command": "net user",
+          "description": "Display or manage local user accounts.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "whoami",
+        "net localgroup"
+      ]
+    },
+    {
+      "name": "net view",
+      "category": "Networking & Shares",
+      "summary": "Display computers or shared resources on the network.",
+      "description": "Display computers or shared resources on the network.",
+      "syntax": "net view [\\\\COMPUTER]",
+      "options": [],
+      "examples": [
+        {
+          "command": "net view",
+          "description": "Display computers or shared resources on the network.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "net use",
+        "net share"
+      ]
+    },
+    {
+      "name": "netsh",
+      "category": "Networking",
+      "summary": "Configure and inspect Windows networking components.",
+      "description": "Configure and inspect Windows networking components.",
+      "syntax": "netsh [CONTEXT] [COMMAND]",
+      "options": [],
+      "examples": [
+        {
+          "command": "netsh",
+          "description": "Configure and inspect Windows networking components.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Powerful networking configuration tool; command contexts vary by Windows version.",
+      "tags": [],
+      "related": [
+        "ipconfig",
+        "netstat"
+      ]
+    },
+    {
+      "name": "netsh advfirewall",
+      "category": "Networking & Security",
+      "summary": "Inspect or configure Windows Defender Firewall using netsh.",
+      "description": "Inspect or configure Windows Defender Firewall using netsh.",
+      "syntax": "netsh advfirewall [firewall|consec] COMMAND",
+      "options": [],
+      "examples": [
+        {
+          "command": "netsh advfirewall",
+          "description": "Inspect or configure Windows Defender Firewall using netsh.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows networking command context; administrative rights commonly required.",
+      "tags": [],
+      "related": [
+        "netsh",
+        "ipconfig"
+      ]
+    },
+    {
+      "name": "netstat",
+      "category": "Networking",
+      "summary": "Display active network connections and listening ports.",
+      "description": "Display active network connections and listening ports.",
+      "syntax": "netstat [-a] [-n] [-o] [-r] [-b]",
+      "options": [
+        {
+          "flag": "-a",
+          "description": "Show all connections and listening ports."
+        },
+        {
+          "flag": "-n",
+          "description": "Show addresses and port numbers numerically."
+        },
+        {
+          "flag": "-o",
+          "description": "Show owning process ID."
+        },
+        {
+          "flag": "-r",
+          "description": "Display routing table."
+        },
+        {
+          "flag": "-b",
+          "description": "Show executable involved; may require elevation."
+        }
+      ],
+      "examples": [
+        {
+          "command": "netstat",
+          "description": "Display active network connections and listening ports.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "tasklist",
+        "ss"
+      ]
+    },
+    {
+      "name": "nslookup",
+      "category": "Networking",
+      "summary": "Query DNS servers.",
+      "description": "Query DNS servers.",
+      "syntax": "nslookup [OPTIONS] [NAME] [SERVER]",
+      "options": [],
+      "examples": [
+        {
+          "command": "nslookup",
+          "description": "Query DNS servers.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "ipconfig",
+        "netstat"
+      ]
+    },
+    {
+      "name": "path",
+      "category": "Shell & Batch",
+      "summary": "Display or set the executable search path.",
+      "description": "Display or set the executable search path.",
+      "syntax": "path [PATH;...]",
+      "options": [],
+      "examples": [
+        {
+          "command": "path",
+          "description": "Display or set the executable search path.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "set",
+        "where"
+      ]
+    },
+    {
+      "name": "pathping",
+      "category": "Networking",
+      "summary": "Combine route tracing with packet-loss statistics.",
+      "description": "Combine route tracing with packet-loss statistics.",
+      "syntax": "pathping [OPTIONS] DESTINATION",
+      "options": [],
+      "examples": [
+        {
+          "command": "pathping",
+          "description": "Combine route tracing with packet-loss statistics.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "tracert",
+        "ping"
+      ]
+    },
+    {
+      "name": "pause",
+      "category": "Shell & Batch",
+      "summary": "Suspend batch-file execution and wait for a key press.",
+      "description": "Suspend batch-file execution and wait for a key press.",
+      "syntax": "pause",
+      "options": [],
+      "examples": [
+        {
+          "command": "pause",
+          "description": "Suspend batch-file execution and wait for a key press.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Batch-file command.",
+      "tags": [],
+      "related": [
+        "choice",
+        "timeout"
+      ]
+    },
+    {
+      "name": "ping",
+      "category": "Networking",
+      "summary": "Test IP connectivity using ICMP echo requests.",
+      "description": "Test IP connectivity using ICMP echo requests.",
+      "syntax": "ping [-t] [-n COUNT] [-4] [-6] DESTINATION",
+      "options": [
+        {
+          "flag": "-t",
+          "description": "Ping until interrupted."
+        },
+        {
+          "flag": "-n COUNT",
+          "description": "Set number of echo requests."
+        },
+        {
+          "flag": "-4 / -6",
+          "description": "Force IPv4 or IPv6."
+        }
+      ],
+      "examples": [
+        {
+          "command": "ping",
+          "description": "Test IP connectivity using ICMP echo requests.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "tracert",
+        "pathping"
+      ]
+    },
+    {
+      "name": "popd",
+      "category": "Shell & Batch",
+      "summary": "Restore the directory saved by PUSHD.",
+      "description": "Restore the directory saved by PUSHD.",
+      "syntax": "popd",
+      "options": [],
+      "examples": [
+        {
+          "command": "popd",
+          "description": "Restore the directory saved by PUSHD.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "pushd",
+        "cd"
+      ]
+    },
+    {
+      "name": "powercfg",
+      "category": "System Administration",
+      "summary": "Configure power plans and inspect power settings.",
+      "description": "Configure power plans and inspect power settings.",
+      "syntax": "powercfg [COMMAND] [OPTIONS]",
+      "options": [
+        {
+          "flag": "/list",
+          "description": "List power schemes."
+        },
+        {
+          "flag": "/getactivescheme",
+          "description": "Show the active scheme."
+        },
+        {
+          "flag": "/energy",
+          "description": "Analyze energy efficiency."
+        },
+        {
+          "flag": "/batteryreport",
+          "description": "Generate a battery report."
+        }
+      ],
+      "examples": [
+        {
+          "command": "powercfg",
+          "description": "Configure power plans and inspect power settings.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "shutdown",
+        "systeminfo"
+      ]
+    },
+    {
+      "name": "powershell",
+      "category": "Shell & Scripting",
+      "summary": "Launch Windows PowerShell from Command Prompt.",
+      "description": "Launch Windows PowerShell from Command Prompt.",
+      "syntax": "powershell [OPTIONS] [COMMAND]",
+      "options": [],
+      "examples": [
+        {
+          "command": "powershell",
+          "description": "Launch Windows PowerShell from Command Prompt.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "This starts a different shell; PowerShell commands are not CMD commands.",
+      "tags": [],
+      "related": [
+        "cmd",
+        "pwsh"
+      ]
+    },
+    {
+      "name": "prompt",
+      "category": "Shell & Batch",
+      "summary": "Change the CMD command prompt.",
+      "description": "Change the CMD command prompt.",
+      "syntax": "prompt [TEXT]",
+      "options": [],
+      "examples": [
+        {
+          "command": "prompt $P$G",
+          "description": "Set the prompt to show the current path followed by >.",
+          "output": "C:\\Users\\Lamer>"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "title",
+        "color"
+      ]
+    },
+    {
+      "name": "pushd",
+      "category": "Shell & Batch",
+      "summary": "Save the current directory and change to another one.",
+      "description": "Save the current directory and change to another one.",
+      "syntax": "pushd [PATH]",
+      "options": [],
+      "examples": [
+        {
+          "command": "pushd",
+          "description": "Save the current directory and change to another one.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "popd",
+        "cd"
+      ]
+    },
+    {
+      "name": "rd",
+      "category": "Files & Directories",
+      "summary": "Remove a directory.",
+      "description": "Remove a directory.",
+      "syntax": "rd [/s] [/q] [DRIVE:]PATH",
+      "options": [
+        {
+          "flag": "/s",
+          "description": "Remove the directory tree, including files and subdirectories."
+        },
+        {
+          "flag": "/q",
+          "description": "Quiet mode; do not ask for confirmation."
+        }
+      ],
+      "examples": [
+        {
+          "command": "rd",
+          "description": "Remove a directory.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "rmdir",
+        "del"
+      ]
+    },
+    {
+      "name": "reg",
+      "category": "System Administration",
+      "summary": "Read and modify the Windows Registry from CMD.",
+      "description": "Read and modify the Windows Registry from CMD.",
+      "syntax": "reg [QUERY|ADD|DELETE|COPY|SAVE|RESTORE|... ]",
+      "options": [],
+      "examples": [
+        {
+          "command": "reg",
+          "description": "Read and modify the Windows Registry from CMD.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Registry changes can destabilize Windows; export a backup before editing.",
+      "tags": [],
+      "related": [
+        "regedit",
+        "set"
+      ]
+    },
+    {
+      "name": "reg query",
+      "category": "System Administration",
+      "summary": "Display registry keys and values.",
+      "description": "Display registry keys and values.",
+      "syntax": "reg query KEYNAME [/v VALUE] [/s]",
+      "options": [],
+      "examples": [
+        {
+          "command": "reg query",
+          "description": "Display registry keys and values.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "reg",
+        "regedit"
+      ]
+    },
+    {
+      "name": "rem",
+      "category": "Shell & Batch",
+      "summary": "Add comments to batch files.",
+      "description": "Add comments to batch files.",
+      "syntax": "rem [COMMENT]",
+      "options": [],
+      "examples": [
+        {
+          "command": "rem",
+          "description": "Add comments to batch files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Batch-file command; comment lines are ignored by CMD.",
+      "tags": [],
+      "related": [
+        "echo",
+        "::"
+      ]
+    },
+    {
+      "name": "ren",
+      "category": "Files & Directories",
+      "summary": "Rename files.",
+      "description": "Rename files.",
+      "syntax": "ren [DRIVE:][PATH]FILENAME1 FILENAME2",
+      "options": [],
+      "examples": [
+        {
+          "command": "ren",
+          "description": "Rename files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "rename",
+        "move"
+      ]
+    },
+    {
+      "name": "rename",
+      "category": "Files & Directories",
+      "summary": "Rename files.",
+      "description": "Rename files.",
+      "syntax": "rename [DRIVE:][PATH]FILENAME1 FILENAME2",
+      "options": [],
+      "examples": [
+        {
+          "command": "rename",
+          "description": "Rename files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "ren"
+      ]
+    },
+    {
+      "name": "rmdir",
+      "category": "Files & Directories",
+      "summary": "Remove a directory.",
+      "description": "Remove a directory.",
+      "syntax": "rmdir [/s] [/q] [DRIVE:]PATH",
+      "options": [],
+      "examples": [
+        {
+          "command": "rmdir",
+          "description": "Remove a directory.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "rd"
+      ]
+    },
+    {
+      "name": "robocopy",
+      "category": "Files & Directories",
+      "summary": "Robustly copy files and directory trees.",
+      "description": "Robustly copy files and directory trees.",
+      "syntax": "robocopy SOURCE DEST [FILE [FILE...]] [OPTIONS]",
+      "options": [
+        {
+          "flag": "/e",
+          "description": "Copy subdirectories, including empty ones."
+        },
+        {
+          "flag": "/mir",
+          "description": "Mirror a directory tree; can delete destination files."
+        },
+        {
+          "flag": "/z",
+          "description": "Copy in restartable mode."
+        },
+        {
+          "flag": "/mt:N",
+          "description": "Use N threads."
+        },
+        {
+          "flag": "/r:N",
+          "description": "Set retry count."
+        }
+      ],
+      "examples": [
+        {
+          "command": "robocopy",
+          "description": "Robustly copy files and directory trees.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Included with modern Windows; /MIR can delete destination content.",
+      "tags": [],
+      "related": [
+        "xcopy",
+        "copy"
+      ]
+    },
+    {
+      "name": "route",
+      "category": "Networking",
+      "summary": "Display or modify the IP routing table.",
+      "description": "Display or modify the IP routing table.",
+      "syntax": "route PRINT | ADD | DELETE | CHANGE [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "route",
+          "description": "Display or modify the IP routing table.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "ipconfig",
+        "netstat"
+      ]
+    },
+    {
+      "name": "sc",
+      "category": "Processes & Services",
+      "summary": "Communicate with the Service Control Manager.",
+      "description": "Communicate with the Service Control Manager.",
+      "syntax": "sc [\\SERVER] COMMAND [SERVICE] [OPTIONS]",
+      "options": [
+        {
+          "flag": "query",
+          "description": "Display service status."
+        },
+        {
+          "flag": "start",
+          "description": "Start a service."
+        },
+        {
+          "flag": "stop",
+          "description": "Stop a service."
+        },
+        {
+          "flag": "config",
+          "description": "Modify service configuration."
+        }
+      ],
+      "examples": [
+        {
+          "command": "sc",
+          "description": "Communicate with the Service Control Manager.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "net",
+        "services.msc"
+      ]
+    },
+    {
+      "name": "schtasks",
+      "category": "Processes & Services",
+      "summary": "Schedule commands and programs to run on a computer.",
+      "description": "Schedule commands and programs to run on a computer.",
+      "syntax": "schtasks /query | /create | /delete | /run [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "schtasks",
+          "description": "Schedule commands and programs to run on a computer.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "at",
+        "tasklist"
+      ]
+    },
+    {
+      "name": "set",
+      "category": "Shell & Batch",
+      "summary": "Display, set, or remove CMD environment variables.",
+      "description": "Display, set, or remove CMD environment variables.",
+      "syntax": "set [VARIABLE[= [STRING]]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "set PROJECT=CommandAcademy",
+          "description": "Set an environment variable for this CMD session.",
+          "output": "(no output)"
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "setx",
+        "path"
+      ]
+    },
+    {
+      "name": "setlocal",
+      "category": "Shell & Batch",
+      "summary": "Begin localization of environment changes in a batch file.",
+      "description": "Begin localization of environment changes in a batch file.",
+      "syntax": "setlocal [ENABLEEXTENSIONS] [DISABLEEXTENSIONS] [ENABLEDELAYEDEXPANSION]",
+      "options": [],
+      "examples": [
+        {
+          "command": "setlocal",
+          "description": "Begin localization of environment changes in a batch file.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Batch-file command.",
+      "tags": [],
+      "related": [
+        "endlocal",
+        "set"
+      ]
+    },
+    {
+      "name": "setx",
+      "category": "Shell & Batch",
+      "summary": "Set environment variables persistently for future command windows.",
+      "description": "Set environment variables persistently for future command windows.",
+      "syntax": "setx VARIABLE VALUE",
+      "options": [],
+      "examples": [
+        {
+          "command": "setx",
+          "description": "Set environment variables persistently for future command windows.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Included in modern Windows; changes do not affect the current CMD process.",
+      "tags": [],
+      "related": [
+        "set",
+        "reg"
+      ]
+    },
+    {
+      "name": "sfc",
+      "category": "System Repair",
+      "summary": "Scan and repair protected Windows system files.",
+      "description": "Scan and repair protected Windows system files.",
+      "syntax": "sfc [/scannow | /verifyonly | /scanfile=FILE]",
+      "options": [
+        {
+          "flag": "/scannow",
+          "description": "Scan all protected system files and repair when possible."
+        },
+        {
+          "flag": "/verifyonly",
+          "description": "Verify integrity without repair."
+        }
+      ],
+      "examples": [
+        {
+          "command": "sfc",
+          "description": "Scan and repair protected Windows system files.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "dism",
+        "chkdsk"
+      ]
+    },
+    {
+      "name": "shift",
+      "category": "Shell & Batch",
+      "summary": "Shift the position of replaceable parameters in a batch file.",
+      "description": "Shift the position of replaceable parameters in a batch file.",
+      "syntax": "shift [/n]",
+      "options": [],
+      "examples": [
+        {
+          "command": "shift",
+          "description": "Shift the position of replaceable parameters in a batch file.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Batch-file command.",
+      "tags": [],
+      "related": [
+        "call",
+        "for"
+      ]
+    },
+    {
+      "name": "shutdown",
+      "category": "System Administration",
+      "summary": "Shut down or restart a computer.",
+      "description": "Shut down or restart a computer.",
+      "syntax": "shutdown [/s | /r | /l] [/t SECONDS] [/a]",
+      "options": [
+        {
+          "flag": "/s",
+          "description": "Shut down."
+        },
+        {
+          "flag": "/r",
+          "description": "Restart."
+        },
+        {
+          "flag": "/l",
+          "description": "Log off."
+        },
+        {
+          "flag": "/t SECONDS",
+          "description": "Set delay before action."
+        },
+        {
+          "flag": "/a",
+          "description": "Abort a pending shutdown."
+        }
+      ],
+      "examples": [
+        {
+          "command": "shutdown",
+          "description": "Shut down or restart a computer.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "logoff",
+        "restart-computer"
+      ]
+    },
+    {
+      "name": "start",
+      "category": "Shell & Batch",
+      "summary": "Start a separate Command Prompt window or program.",
+      "description": "Start a separate Command Prompt window or program.",
+      "syntax": "start [TITLE] [OPTIONS] COMMAND [ARGS...]",
+      "options": [
+        {
+          "flag": "/b",
+          "description": "Start without creating a new window."
+        },
+        {
+          "flag": "/wait",
+          "description": "Start an application and wait for it to finish."
+        },
+        {
+          "flag": "/min /max",
+          "description": "Start minimized or maximized."
+        }
+      ],
+      "examples": [
+        {
+          "command": "start",
+          "description": "Start a separate Command Prompt window or program.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "call",
+        "tasklist"
+      ]
+    },
+    {
+      "name": "subst",
+      "category": "Storage & Disks",
+      "summary": "Associate a drive letter with a directory path.",
+      "description": "Associate a drive letter with a directory path.",
+      "syntax": "subst [DRIVE: [PATH]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "subst",
+          "description": "Associate a drive letter with a directory path.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "mountvol",
+        "net use"
+      ]
+    },
+    {
+      "name": "systeminfo",
+      "category": "System Information",
+      "summary": "Display detailed operating-system and hardware configuration.",
+      "description": "Display detailed operating-system and hardware configuration.",
+      "syntax": "systeminfo [/s COMPUTER] [/fo FORMAT] [/nh]",
+      "options": [
+        {
+          "flag": "/s COMPUTER",
+          "description": "Query a remote computer."
+        },
+        {
+          "flag": "/fo FORMAT",
+          "description": "Choose TABLE, LIST, or CSV output."
+        },
+        {
+          "flag": "/nh",
+          "description": "Omit column headers in table output."
+        }
+      ],
+      "examples": [
+        {
+          "command": "systeminfo",
+          "description": "Display detailed operating-system and hardware configuration.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "ver",
+        "hostname",
+        "msinfo32"
+      ]
+    },
+    {
+      "name": "takeown",
+      "category": "Storage & Security",
+      "summary": "Take ownership of a file or directory.",
+      "description": "Take ownership of a file or directory.",
+      "syntax": "takeown [/f PATH] [/r] [/d Y|N]",
+      "options": [],
+      "examples": [
+        {
+          "command": "takeown",
+          "description": "Take ownership of a file or directory.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "icacls"
+      ]
+    },
+    {
+      "name": "taskkill",
+      "category": "Processes & Services",
+      "summary": "End one or more processes.",
+      "description": "End one or more processes.",
+      "syntax": "taskkill [/pid PID | /im IMAGE] [/f] [/t]",
+      "options": [
+        {
+          "flag": "/pid PID",
+          "description": "Select a process by process ID."
+        },
+        {
+          "flag": "/im IMAGE",
+          "description": "Select by image name."
+        },
+        {
+          "flag": "/f",
+          "description": "Force termination."
+        },
+        {
+          "flag": "/t",
+          "description": "Terminate child processes too."
+        }
+      ],
+      "examples": [
+        {
+          "command": "taskkill",
+          "description": "End one or more processes.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "danger",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "tasklist"
+      ]
+    },
+    {
+      "name": "tasklist",
+      "category": "Processes & Services",
+      "summary": "List running processes.",
+      "description": "List running processes.",
+      "syntax": "tasklist [/fi FILTER] [/fo FORMAT] [/v] [/svc]",
+      "options": [
+        {
+          "flag": "/fi FILTER",
+          "description": "Filter the task list."
+        },
+        {
+          "flag": "/fo FORMAT",
+          "description": "Choose TABLE, LIST, or CSV output."
+        },
+        {
+          "flag": "/svc",
+          "description": "Show services hosted in each process."
+        },
+        {
+          "flag": "/v",
+          "description": "Show verbose task information."
+        }
+      ],
+      "examples": [
+        {
+          "command": "tasklist",
+          "description": "List running processes.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "taskkill",
+        "wmic"
+      ]
+    },
+    {
+      "name": "telnet",
+      "category": "Networking & Diagnostics",
+      "summary": "Start a Telnet client session.",
+      "description": "Start a Telnet client session.",
+      "syntax": "telnet [HOST [PORT]]",
+      "options": [],
+      "examples": [
+        {
+          "command": "telnet",
+          "description": "Start a Telnet client session.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Telnet Client may need to be enabled; protocol is unencrypted.",
+      "tags": [],
+      "related": [
+        "ssh",
+        "curl"
+      ]
+    },
+    {
+      "name": "time",
+      "category": "Shell & Batch",
+      "summary": "Display or set the system time.",
+      "description": "Display or set the system time.",
+      "syntax": "time [/t | TIME]",
+      "options": [],
+      "examples": [
+        {
+          "command": "time",
+          "description": "Display or set the system time.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "date"
+      ]
+    },
+    {
+      "name": "timeout",
+      "category": "Shell & Batch",
+      "summary": "Wait for a specified number of seconds or until a key is pressed.",
+      "description": "Wait for a specified number of seconds or until a key is pressed.",
+      "syntax": "timeout /t SECONDS [/nobreak]",
+      "options": [
+        {
+          "flag": "/t SECONDS",
+          "description": "Specify the wait duration."
+        },
+        {
+          "flag": "/nobreak",
+          "description": "Ignore key presses."
+        }
+      ],
+      "examples": [
+        {
+          "command": "timeout",
+          "description": "Wait for a specified number of seconds or until a key is pressed.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "pause",
+        "ping"
+      ]
+    },
+    {
+      "name": "title",
+      "category": "Shell & Batch",
+      "summary": "Set the Command Prompt window title.",
+      "description": "Set the Command Prompt window title.",
+      "syntax": "title [STRING]",
+      "options": [],
+      "examples": [
+        {
+          "command": "title",
+          "description": "Set the Command Prompt window title.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "prompt",
+        "color"
+      ]
+    },
+    {
+      "name": "tracert",
+      "category": "Networking",
+      "summary": "Trace the route to an IP destination.",
+      "description": "Trace the route to an IP destination.",
+      "syntax": "tracert [-d] [-h MAXHOPS] [-w TIMEOUT] DESTINATION",
+      "options": [
+        {
+          "flag": "-d",
+          "description": "Do not resolve addresses to hostnames."
+        },
+        {
+          "flag": "-h MAXHOPS",
+          "description": "Set maximum hop count."
+        },
+        {
+          "flag": "-w TIMEOUT",
+          "description": "Set per-hop timeout in milliseconds."
+        }
+      ],
+      "examples": [
+        {
+          "command": "tracert",
+          "description": "Trace the route to an IP destination.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "pathping",
+        "ping"
+      ]
+    },
+    {
+      "name": "tree",
+      "category": "Files & Directories",
+      "summary": "Graphically display directory structure.",
+      "description": "Graphically display directory structure.",
+      "syntax": "tree [DRIVE:][PATH] [/f] [/a]",
+      "options": [
+        {
+          "flag": "/f",
+          "description": "Display filenames in each directory."
+        },
+        {
+          "flag": "/a",
+          "description": "Use ASCII characters."
+        }
+      ],
+      "examples": [
+        {
+          "command": "tree",
+          "description": "Graphically display directory structure.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "dir"
+      ]
+    },
+    {
+      "name": "type",
+      "category": "Files & Directories",
+      "summary": "Display the contents of a text file.",
+      "description": "Display the contents of a text file.",
+      "syntax": "type [DRIVE:][PATH]FILENAME",
+      "options": [],
+      "examples": [
+        {
+          "command": "type readme.txt",
+          "description": "Print readme.txt to the console.",
+          "output": "Welcome to the project."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "more",
+        "copy"
+      ]
+    },
+    {
+      "name": "ver",
+      "category": "System Information",
+      "summary": "Display the Windows version string.",
+      "description": "Display the Windows version string.",
+      "syntax": "ver",
+      "options": [],
+      "examples": [
+        {
+          "command": "ver",
+          "description": "Display the Windows version string.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "winver",
+        "systeminfo"
+      ]
+    },
+    {
+      "name": "verify",
+      "category": "Shell & Batch",
+      "summary": "Enable or disable verification of file writes.",
+      "description": "Enable or disable verification of file writes.",
+      "syntax": "verify [ON | OFF]",
+      "options": [],
+      "examples": [
+        {
+          "command": "verify",
+          "description": "Enable or disable verification of file writes.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "copy"
+      ]
+    },
+    {
+      "name": "vol",
+      "category": "Storage & Disks",
+      "summary": "Display a disk volume label and serial number.",
+      "description": "Display a disk volume label and serial number.",
+      "syntax": "vol [DRIVE:]",
+      "options": [],
+      "examples": [
+        {
+          "command": "vol",
+          "description": "Display a disk volume label and serial number.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "label",
+        "diskpart"
+      ]
+    },
+    {
+      "name": "where",
+      "category": "Files & Directories",
+      "summary": "Locate files that match a search pattern.",
+      "description": "Locate files that match a search pattern.",
+      "syntax": "where [/r DIR] [/q] [/f] [/t] PATTERN",
+      "options": [
+        {
+          "flag": "/r DIR",
+          "description": "Search recursively under DIR."
+        },
+        {
+          "flag": "/q",
+          "description": "Return only an exit code."
+        },
+        {
+          "flag": "/f",
+          "description": "Display matching filenames in quotes."
+        }
+      ],
+      "examples": [
+        {
+          "command": "where",
+          "description": "Locate files that match a search pattern.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "dir",
+        "path"
+      ]
+    },
+    {
+      "name": "whoami",
+      "category": "System Information",
+      "summary": "Display the current user and security information.",
+      "description": "Display the current user and security information.",
+      "syntax": "whoami [/user] [/groups] [/priv] [/all]",
+      "options": [
+        {
+          "flag": "/user",
+          "description": "Display the current user SID."
+        },
+        {
+          "flag": "/groups",
+          "description": "Display group memberships."
+        },
+        {
+          "flag": "/priv",
+          "description": "Display privileges."
+        },
+        {
+          "flag": "/all",
+          "description": "Display all available information."
+        }
+      ],
+      "examples": [
+        {
+          "command": "whoami",
+          "description": "Display the current user and security information.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "safe",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "net user",
+        "systeminfo"
+      ]
+    },
+    {
+      "name": "wmic",
+      "category": "System Information",
+      "summary": "Access Windows Management Instrumentation from the command line.",
+      "description": "Access Windows Management Instrumentation from the command line.",
+      "syntax": "wmic [ALIAS] [VERB] [OPTIONS]",
+      "options": [],
+      "examples": [
+        {
+          "command": "wmic",
+          "description": "Access Windows Management Instrumentation from the command line.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Deprecated and removed from some newer Windows installations; use PowerShell CIM cmdlets where available.",
+      "tags": [],
+      "related": [
+        "systeminfo",
+        "driverquery"
+      ]
+    },
+    {
+      "name": "xcopy",
+      "category": "Files & Directories",
+      "summary": "Copy files and directory trees.",
+      "description": "Copy files and directory trees.",
+      "syntax": "xcopy SOURCE [DESTINATION] [OPTIONS]",
+      "options": [
+        {
+          "flag": "/s",
+          "description": "Copy directories and subdirectories except empty ones."
+        },
+        {
+          "flag": "/e",
+          "description": "Copy directories and subdirectories, including empty ones."
+        },
+        {
+          "flag": "/i",
+          "description": "Assume destination is a directory when ambiguous."
+        },
+        {
+          "flag": "/y",
+          "description": "Suppress overwrite confirmation."
+        },
+        {
+          "flag": "/d",
+          "description": "Copy files changed on or after the specified date."
+        }
+      ],
+      "examples": [
+        {
+          "command": "xcopy",
+          "description": "Copy files and directory trees.",
+          "output": "Example output depends on your system and arguments."
+        }
+      ],
+      "risk": "caution",
+      "compatibility": "Windows Command Prompt (cmd.exe); availability varies by Windows edition and version.",
+      "tags": [],
+      "related": [
+        "copy",
+        "robocopy"
+      ]
+    }
+  ]
+}
